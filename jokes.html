@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Български вицове по категории | usmivka</title>
+  <meta name="description" content="Разгледай забавни български вицове за шофьори, програмисти, Иванчо, тъщи и доктори. Търси по тема, запазвай любими и разкривай поантата.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="usmivka">
+  <meta name="theme-color" content="#020617">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bg_BG">
+  <meta property="og:site_name" content="usmivka">
+  <meta property="og:title" content="Български вицове по категории">
+  <meta property="og:description" content="Търси вицове за шофьори, програмисти, Иванчо, тъщи и доктори. Разкривай поантата и запазвай любими.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Български вицове по категории">
+  <meta name="twitter:description" content="Търси вицове за шофьори, програмисти, Иванчо, тъщи и доктори. Разкривай поантата и запазвай любими.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script src="seo.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#020617", card: "#0f172a", line: "#1e293b", accent: "#facc15", brand: "#6366f1" },
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+    body { font-family: Inter, system-ui, sans-serif; }
+    .pill.active { background: #6366f1; color: #fff; border-color: #6366f1; }
+  </style>
+</head>
+<body class="bg-ink text-slate-100 min-h-screen flex flex-col">
+  <nav class="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-black text-lg">
+        <i class="fa-solid fa-face-smile-wink text-accent"></i> <span class="tracking-wider">usmivka</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-sm font-semibold">
+        <a href="index.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Днес</a>
+        <a href="jokes.html" class="px-3 py-2 rounded-lg bg-brand text-white">Топ Вицове</a>
+        <a href="greetings.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Пожелания</a>
+        <a href="games.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Игри</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-xl px-2" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-line px-4 py-3 space-y-1 bg-ink">
+      <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Днес</a>
+      <a href="jokes.html" class="block px-3 py-2 rounded-lg bg-brand">Топ Вицове</a>
+      <a href="greetings.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Пожелания</a>
+      <a href="games.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Игри</a>
+    </div>
+  </nav>
+
+  <header class="max-w-6xl mx-auto px-4 pt-10 pb-4 text-center">
+    <p class="inline-block text-xs font-black tracking-widest uppercase text-yellow-300 bg-yellow-400/10 border border-yellow-400/20 px-3 py-1 rounded-full mb-4">Архив на смеха</p>
+    <h1 class="text-4xl md:text-5xl font-black">Български вицове за <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-yellow-300">добро настроение</span></h1>
+    <p class="mt-3 text-slate-400 max-w-2xl mx-auto">Всеки виц е разделен на начало и край. Натисни „Разкрий края“, за да получиш поантата.</p>
+  </header>
+
+  <div class="max-w-6xl mx-auto px-4 pb-6">
+    <div id="filters" class="flex flex-wrap gap-2 justify-center">
+      <button class="pill active px-4 py-2 rounded-full border border-line text-sm font-bold bg-slate-900" data-filter="all">Всички</button>
+      <button class="pill px-4 py-2 rounded-full border border-line text-sm font-bold bg-slate-900 text-slate-300" data-filter="drivers">За шофьори</button>
+      <button class="pill px-4 py-2 rounded-full border border-line text-sm font-bold bg-slate-900 text-slate-300" data-filter="programmers">За програмисти</button>
+      <button class="pill px-4 py-2 rounded-full border border-line text-sm font-bold bg-slate-900 text-slate-300" data-filter="ivancho">Иванчо</button>
+      <button class="pill px-4 py-2 rounded-full border border-line text-sm font-bold bg-slate-900 text-slate-300" data-filter="mothers_in_law">Тъщи</button>
+      <button class="pill px-4 py-2 rounded-full border border-line text-sm font-bold bg-slate-900 text-slate-300" data-filter="doctors">Доктори</button>
+      <button class="pill px-4 py-2 rounded-full border border-red-900 text-sm font-bold bg-slate-900 text-red-300" data-filter="adult">18+ · За възрастни</button>
+    </div>
+    <div class="mt-5 mx-auto flex max-w-2xl flex-col gap-3 sm:flex-row">
+      <label class="flex-1">
+        <span class="sr-only">Търси виц</span>
+        <input id="jokeSearch" type="search" placeholder="Търси виц или тема…" class="w-full rounded-xl border border-line bg-card px-4 py-3 text-sm text-white outline-none focus:border-indigo-400">
+      </label>
+      <button id="favoritesOnly" class="rounded-xl border border-line bg-card px-4 py-3 text-sm font-bold text-slate-300 hover:text-white" aria-pressed="false">♡ Само любими</button>
+      <button id="randomJoke" class="rounded-xl bg-brand px-4 py-3 text-sm font-bold text-white hover:bg-indigo-500"><i class="fa-solid fa-shuffle mr-2"></i>Случаен виц</button>
+    </div>
+    <p id="jokeCount" class="mt-3 text-center text-xs text-slate-500" aria-live="polite"></p>
+  </div>
+
+  <main class="flex-1 max-w-6xl mx-auto w-full px-4 pb-16">
+    <div id="jokeGrid" class="grid gap-4 md:grid-cols-2"></div>
+  </main>
+
+  <footer class="border-t border-line bg-slate-950 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-3 items-center justify-between text-sm text-slate-500">
+      <p>© 2026 usmivka</p>
+      <div class="flex gap-4">
+        <a class="hover:text-accent" href="index.html">Днес</a>
+        <a class="hover:text-accent" href="greetings.html">Пожелания</a>
+        <a class="hover:text-accent" href="games.html">Игри</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let JOKES = [
+      { cat: "drivers", setup: "Инструкторът пита курсиста: „Какво правиш, когато светофарът е жълт?“", punchline: "„Затварям очи и се моля да е станал зелен, докато мина.“" },
+      { cat: "drivers", setup: "Спират шофьор на камион. Катаджията: „Знаете ли защо ви спрях?“", punchline: "„Знаех, че ще питате. Аз само карам. Вие сте професионалистът по спирането.“" },
+      { cat: "drivers", setup: "Жена се качва в такси: „Карайте внимателно, още уча да карам.“", punchline: "Таксиметровият: „Тогава седнете отпред. Отзад се учат само пътниците.“" },
+      { cat: "programmers", setup: "Съпругата вика: „Отново ли си в лаптопа в три през нощта?“", punchline: "„Не дебъгвам. Просто чакам билд. От вчера.“" },
+      { cat: "programmers", setup: "Как програмистът брои до десет?", punchline: "0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. После пита: „А защо индексът почва от нула вкъщи?“ — „Защото първата чаша кафе не брои.“" },
+      { cat: "programmers", setup: "Клиентът: „Само една малка промяна в сайта.“", punchline: "Програмистът кима, затваря лаптопа и си търси нова работа. „Малка промяна“ е най-скъпият идиом в IT." },
+      { cat: "ivancho", setup: "Учителката: „Иванчо, кажи изречение със „защото“.“", punchline: "„Защото мама каза, че ако пак ме питате, да ви кажа, че съм болен.“" },
+      { cat: "ivancho", setup: "Директорът вика Иванчо: „Защо удари съученика си с линийка?“", punchline: "„Защото химикалката пише по-слабо, а исках урокът по геометрия да се запомни.“" },
+      { cat: "ivancho", setup: "Мама: „Иванчо, изяде ли си зеленчуците?“", punchline: "„Изчетох етикета. Пише „препоръчителна консумация“. Препоръка не е заповед.“" },
+      { cat: "mothers_in_law", setup: "Зетят: „Мамо, защо винаги критикувате гозбата ми?“", punchline: "Тъщата: „За да имаш стимул да ходиш на работа. Вкъщи вече си се доказал.“" },
+      { cat: "mothers_in_law", setup: "Питат мъжа: „Как разбираш, че тъща ти те обича?“", punchline: "„Когато ти пълни чинията втори път — значи още не е приключила разпита.“" },
+      { cat: "mothers_in_law", setup: "Свекървата на гости. Зетят шепне на жена си: „Кога си тръгва?“", punchline: "„Когато свърши каймата, кабелът и нервите ти. По реда, който сама си избере.“" },
+      { cat: "doctors", setup: "Пациент: „Докторе, когато пия кафе, ръката ми трепери.“", punchline: "„Тогава опитайте без кофеин — кафето ви е по-бързо от вас.“" },
+      { cat: "doctors", setup: "Лекарят: „Трябва да отслабнете с 10 килограма.“", punchline: "Пациентът: „Добре, ще оставя якето в коридора. Ако не стига — и надеждите.“" },
+      { cat: "doctors", setup: "В чакалнята: „Кой е следващият?“", punchline: "Всички стават. Сестрата: „Спокойно, има столове за всички — не е състезание.“" },
+      { cat: "drivers", setup: "Пътник пита таксиметровия шофьор: „Може ли по-бързо?“", punchline: "„Може, но тогава ще трябва да ви таксувам и за гледката.“" },
+      { cat: "drivers", setup: "Шофьорът казва на навигацията: „Знам по-кратък път.“", punchline: "След час навигацията въздъхва: „Добре, ти водиш. Аз само ще запомня къде сме.“" },
+      { cat: "drivers", setup: "Пътникът пита: „Този автобус минава ли през центъра?“", punchline: "„Ако не се отклони от характера си — да.“" },
+      { cat: "programmers", setup: "Какво казва програмистът, когато кодът заработи от първия път?", punchline: "„Не пипайте нищо. Нека остане историческо събитие.“" },
+      { cat: "programmers", setup: "Колегата пита: „Защо си кръстил променливата „временно“?“", punchline: "„Защото след три години никой няма да помни защо е така.“" },
+      { cat: "programmers", setup: "Програмистът си сложил аларма за почивка. Какво станало?", punchline: "Отворил нов прозорец, за да потърси как се почива, и забравил защо е станал." },
+      { cat: "ivancho", setup: "Учителят пита Иванчо: „Защо закъсня за училище?“", punchline: "„На табелата пишеше „Училище — намали“, послушах.“" },
+      { cat: "ivancho", setup: "Майката пита Иванчо: „Защо дневникът ти е празен?“", punchline: "„Пазя място за бъдещите си успехи.“" },
+      { cat: "ivancho", setup: "Учителката: „Иванчо, кажи дума с три „о“.“", punchline: "„Зоологическата градина.“ — „Там са две.“ — „Тогава ще отида пак.“" },
+      { cat: "mothers_in_law", setup: "Тъщата пита зетя: „Какво ще правиш, ако спечелиш от лотарията?“", punchline: "„Ще ти купя билет да ни дойдеш на гости.“ — „А ако не спечелиш?“ — „Ще ти купя билет обратно.“" },
+      { cat: "mothers_in_law", setup: "Зетят пита тъща си: „Кафе или чай?“", punchline: "„Каквото решиш.“ — „Тогава ще направя кафе, за да не спорим.“ — „Виждаш ли, вече се учиш.“" },
+      { cat: "mothers_in_law", setup: "Тъщата казва: „Чувствай се като у дома си.“", punchline: "Зетят сяда удобно. Тя добавя: „Само не забравяй, че вкъщи си гост.“" },
+      { cat: "doctors", setup: "Пациентът пита: „Докторе, трябва ли да избягвам стреса?“", punchline: "„Разбира се.“ — „Добре, ще спра да чета сметките.“" },
+      { cat: "doctors", setup: "Лекарят пита: „Колко чаши вода пиете на ден?“", punchline: "„Зависи колко пъти ми напомни приложението.“" },
+      { cat: "doctors", setup: "Пациентът казва: „Докторе, имам проблем с паметта.“", punchline: "„От кога?“ — „Кое от кога?“" },
+      { cat: "doctors", setup: "Пациентът пита: „Докторе, мога ли да пия кафе преди изследването?“", punchline: "„Можете, но ще е жалко да се събудите за резултатите.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Тя пита на първа среща: „Пиеш ли кафе вечер?“", punchline: "„Не, после не мога да заспя.“ — „А след среща?“ — „Тогава не мога да заспя, защото превъртам целия разговор.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Той пита: „Скъпа, гледаме ли филм или си говорим?“", punchline: "„И двете.“ — „Чудесно, ще пусна нещо, което вече сме гледали.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Двамата решават да си направят романтична вечер у дома.", punchline: "Запалват свещи, отварят хубава бутилка и спорят половин час кой е забравил да купи хляб." },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Тя казва: „Искам да поговорим за бюджета.“", punchline: "Той отговаря: „Разбира се. Само да приключа разговора с известието от банката.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Той пита: „Кой е ред да измие чиниите?“", punchline: "„На този, който пръв забележи мивката.“ — „Тогава ще изчакам да ми кажеш.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Двамата си обещават да започнат здравословен режим в понеделник.", punchline: "В неделя поръчват двойна пица — за да изпратят стария режим подобаващо." },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Тя пита: „Помниш ли какво имахме да купим?“", punchline: "„Разбира се.“ — „Какво?“ — „Надявах се ти да си спомниш, като стигнем до магазина.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Той казва: „Тази вечер ще гледаме нещо кратко.“", punchline: "Двамата избират сериал, обсъждат го до полунощ и заспиват преди началните надписи." },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "На почивка тя пита: „Взе ли всичко необходимо?“", punchline: "„Да: зарядни, документи, лекарства и списък с нещата, които забравихме.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Той я хваща да разглежда онлайн магазин: „Нали само гледаше?“", punchline: "„Да. Пратките сами решиха, че искат да ни посетят.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Тя пита: „Гладен ли си, или просто отваряш хладилника?“", punchline: "„Проверявам дали съдържанието му се е променило от последната проверка преди пет минути.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Сервитьорът пита двойката: „Желаете ли десерт?“", punchline: "„Да, но може ли в кутия? Имаме планове да си легнем рано.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Той казва: „Днес ще си поделим домакинската работа.“", punchline: "„Чудесно. Ти избираш коя работа, аз ще споделя мнението си за нея.“" },
+      { cat: "adult", kind: "ВИЦ · 18+", setup: "Двамата настройват алармата за шест сутринта.", punchline: "В шест и пет тя звъни. В шест и шест вече имат общо решение: утре ще започнат." },
+      { cat: "adult", kind: "АВТОРСКА ПОГОВОРКА · 18+", setup: "Любовта минава през стомаха.", punchline: "А разбирателството — през въпроса кой ще измие тенджерата." },
+      { cat: "adult", kind: "АВТОРСКА ПОГОВОРКА · 18+", setup: "Който рано става, далеч стига.", punchline: "Но до обяд вече търси кафе и тихо място за почивка." },
+      { cat: "adult", kind: "АВТОРСКА ПОГОВОРКА · 18+", setup: "Не оставяй за утре това, което можеш да свършиш днес.", punchline: "Освен ако е сгъването на прането — то винаги намира нов утрешен ден." },
+      { cat: "adult", kind: "АВТОРСКА ПОГОВОРКА · 18+", setup: "Сговорна дружина планина повдига.", punchline: "А сметката в ресторанта — ако някой пръв предложи да я разделят." },
+      { cat: "adult", kind: "АВТОРСКА ПОГОВОРКА · 18+", setup: "Утрото е по-мъдро от вечерта.", punchline: "Особено когато вечерта си поръчал нещо онлайн и сутринта трябва да обясниш какво е." },
+      { cat: "adult", kind: "АВТОРСКА ПОГОВОРКА · 18+", setup: "На хубавия човек и малкото му стига.", punchline: "На хубавата почивка обаче ѝ трябват поне още два свободни дни." }
+    ];
+
+    const grid = document.getElementById("jokeGrid");
+    const FAVORITES_KEY = "smq-favorite-jokes";
+    let storedFavorites = [];
+    try { storedFavorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]"); } catch (error) { storedFavorites = []; }
+    const favorites = new Set(Array.isArray(storedFavorites) ? storedFavorites : []);
+    let filter = "all";
+    let query = "";
+    let favoritesOnly = false;
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+    }
+
+    function render() {
+      const list = JOKES.map((j, index) => ({ ...j, id: `${j.cat}-${index}` })).filter(j => {
+        const matchesCategory = filter === "all" || j.cat === filter;
+        const matchesQuery = `${j.setup} ${j.punchline} ${label(j.cat)}`.toLocaleLowerCase("bg").includes(query);
+        return matchesCategory && matchesQuery && (!favoritesOnly || favorites.has(j.id));
+      });
+      document.getElementById("jokeCount").textContent = `Показани ${list.length} от ${JOKES.length} вица`;
+      grid.innerHTML = list.length ? list.map((j, i) => `
+        <article id="joke-${i}" class="relative overflow-hidden bg-card border border-line rounded-2xl p-5 flex flex-col" data-cat="${escapeHtml(j.cat)}">
+          <p class="text-xs font-black tracking-widest ${j.cat === "adult" ? "text-red-300" : "text-slate-500"} mb-3">${j.kind || label(j.cat)}</p>
+          <p class="font-medium leading-relaxed flex-1">${escapeHtml(j.setup)}</p>
+          <button class="reveal mt-4 w-full py-2.5 rounded-xl bg-brand hover:bg-indigo-500 font-bold text-sm" data-i="${i}">Разкрий края</button>
+          <p class="punch hidden mt-4 text-accent font-semibold leading-relaxed">${escapeHtml(j.punchline)}</p>
+          <button class="favorite mt-4 self-end rounded-lg px-3 py-2 text-sm font-bold ${favorites.has(j.id) ? "text-pink-300" : "text-slate-500 hover:text-pink-300"}" data-id="${escapeHtml(j.id)}" aria-pressed="${favorites.has(j.id)}">${favorites.has(j.id) ? "♥ Запазен" : "♡ Запази"}</button>
+          ${j.cat === "adult" ? `<div class="adult-gate absolute inset-0 flex items-center justify-center rounded-2xl border border-red-900/60 bg-slate-950/95 p-5 text-center"><div><p class="font-black text-red-300">Съдържание 18+</p><p class="mt-2 text-sm text-slate-400">Хумор за възрастни, без графично съдържание.</p><button class="confirm-adult mt-4 rounded-xl bg-red-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-red-600">Потвърждавам, че съм навършил 18 години</button></div></div>` : ""}
+        </article>
+      `).join("") : `<div class="md:col-span-2 rounded-2xl border border-line bg-card p-8 text-center"><p class="text-lg font-bold">Няма намерени вицове</p><p class="mt-2 text-sm text-slate-400">Промени търсенето или избери друга категория.</p></div>`;
+      grid.querySelectorAll(".reveal").forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.nextElementSibling.classList.remove("hidden");
+          btn.classList.add("hidden");
+        });
+      });
+      grid.querySelectorAll(".favorite").forEach(btn => btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+        render();
+      }));
+      grid.querySelectorAll(".confirm-adult").forEach(btn => btn.addEventListener("click", () => btn.closest(".adult-gate").remove()));
+    }
+
+    function label(cat) {
+      return {
+        drivers: "ШОФЬОРИ",
+        programmers: "ПРОГРАМИСТИ",
+        ivancho: "ИВАНЧО",
+        mothers_in_law: "ТЪЩИ",
+        doctors: "ДОКТОРИ",
+        adult: "18+ · ЗА ВЪЗРАСТНИ"
+      }[cat] || "ВИЦ";
+    }
+
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+    document.querySelectorAll(".pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+        btn.classList.add("active");
+        filter = btn.dataset.filter;
+        render();
+      });
+    });
+    document.getElementById("jokeSearch").addEventListener("input", event => {
+      query = event.target.value.trim().toLocaleLowerCase("bg");
+      render();
+    });
+    document.getElementById("favoritesOnly").addEventListener("click", event => {
+      favoritesOnly = !favoritesOnly;
+      event.currentTarget.setAttribute("aria-pressed", String(favoritesOnly));
+      event.currentTarget.classList.toggle("text-pink-300", favoritesOnly);
+      render();
+    });
+    document.getElementById("randomJoke").addEventListener("click", () => {
+      const cards = [...grid.querySelectorAll("article[id^='joke-']")];
+      if (!cards.length) return;
+      const card = cards[Math.floor(Math.random() * cards.length)];
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.querySelector(".reveal").click();
+      card.classList.add("ring-2", "ring-yellow-300");
+      setTimeout(() => card.classList.remove("ring-2", "ring-yellow-300"), 1600);
+    });
+    async function loadGrowingArchive() {
+      const seen = new Set(JOKES.map(joke => `${joke.setup}|${joke.punchline}`));
+      for (const source of ["joke_archive.json", "data.json"]) {
+        try {
+          const response = await fetch(source, { cache: "no-store" });
+          if (!response.ok) continue;
+          const payload = await response.json();
+          const incoming = source === "data.json" ? payload.jokes : payload;
+          if (!Array.isArray(incoming)) continue;
+          incoming.forEach(joke => {
+            if (!joke || !joke.setup || !joke.punchline) return;
+            const category = joke.cat || joke.category || "programmers";
+            const text = `${joke.setup} ${joke.punchline}`;
+            if (category === "dark" || /гроб\w*|погреб\w*|скелет\w*|призрак\w*|смърт\w*|мъртв\w*|гробар\w*|отвъд|задгроб\w*|онзи свят|другия свят|ковчег\w*|могил\w*|труп\w*|починал\w*|починала\w*|починало\w*|починали\w*|прижив\w*|умира\w*|умрел\w*|загин\w*|(?<![а-я])покой[а-я]*/iu.test(text)) return;
+            const signature = `${joke.setup}|${joke.punchline}`;
+            if (seen.has(signature)) return;
+            seen.add(signature);
+            JOKES.push({ setup: joke.setup, punchline: joke.punchline, cat: category });
+          });
+        } catch (error) {
+          // Статичният набор от вицове остава достъпен и без мрежова връзка.
+        }
+      }
+      render();
+    }
+    loadGrowingArchive();
+  </script>
+</body>
+</html>

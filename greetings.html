@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50 пожелания за всеки повод | usmivka</title>
+  <meta name="description" content="Намери пожелание за рожден ден, имен ден, сватба, юбилей и още поводи. Създай личен поздрав с Поздравителното ателие и го сподели.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="usmivka">
+  <meta name="theme-color" content="#020617">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bg_BG">
+  <meta property="og:site_name" content="usmivka">
+  <meta property="og:title" content="50 пожелания за всеки повод">
+  <meta property="og:description" content="Избери повод и стил, създай личен поздрав или разгледай 50 пожелания за празниците и важните моменти.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="50 пожелания за всеки повод">
+  <meta name="twitter:description" content="Избери повод и стил, създай личен поздрав или разгледай 50 пожелания за празниците и важните моменти.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script src="seo.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#020617", card: "#0f172a", line: "#1e293b", accent: "#facc15", brand: "#6366f1" },
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+    body { font-family: Inter, system-ui, sans-serif; }
+    .masonry { column-count: 1; column-gap: 1.25rem; }
+    @media (min-width: 768px) { .masonry { column-count: 2; } }
+    .masonry-item { break-inside: avoid; margin-bottom: 1.25rem; }
+    .toast { animation: slideIn .3s forwards, fadeOut .3s forwards 2.6s; }
+    @keyframes slideIn { from { opacity:0; transform:translateY(12px);} to { opacity:1; transform:translateY(0);} }
+    @keyframes fadeOut { to { opacity:0; transform:translateY(-8px);} }
+    .nav-link.active { background: #6366f1; color: #fff; }
+  </style>
+</head>
+<body class="bg-ink text-slate-100 min-h-screen flex flex-col">
+  <nav class="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-black text-lg">
+        <i class="fa-solid fa-face-smile-wink text-accent"></i> <span class="tracking-wider">usmivka</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-sm font-semibold">
+        <a href="index.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Днес</a>
+        <a href="jokes.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Топ Вицове</a>
+        <a href="greetings.html" class="px-3 py-2 rounded-lg bg-brand text-white">Пожелания</a>
+        <a href="games.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Игри</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-xl px-2" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-line px-4 py-3 space-y-1 bg-ink">
+      <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Днес</a>
+      <a href="jokes.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Топ Вицове</a>
+      <a href="greetings.html" class="block px-3 py-2 rounded-lg bg-brand">Пожелания</a>
+      <a href="games.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Игри</a>
+    </div>
+  </nav>
+
+  <header class="max-w-7xl mx-auto px-4 pt-10 pb-6 text-center">
+    <p class="inline-block text-xs font-black tracking-widest uppercase text-pink-300 bg-pink-500/10 border border-pink-500/20 px-3 py-1 rounded-full mb-4">Мега каталог</p>
+    <h1 class="text-4xl md:text-5xl font-black">Намерете <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-yellow-300">перфектното пожелание</span></h1>
+    <p class="mt-3 text-slate-400 max-w-2xl mx-auto">Оригинални, дълги текстове на български. Копирайте с един клик или пратете директно по Viber.</p>
+  </header>
+
+  <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-16">
+    <section id="greetingStudio" class="relative mb-10 overflow-hidden rounded-[2rem] border border-indigo-800/60 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 p-5 shadow-2xl shadow-indigo-950/30 sm:p-8 lg:p-10" aria-labelledby="generatorTitle">
+      <div class="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true"></div>
+      <div class="relative">
+        <div class="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-2xl">
+            <p class="inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1.5 text-xs font-black tracking-widest text-amber-200"><i class="fa-solid fa-wand-magic-sparkles"></i> ПОЗДРАВИТЕЛНО АТЕЛИЕ</p>
+            <h2 id="generatorTitle" class="mt-4 text-3xl font-black leading-tight sm:text-4xl">Думи от сърце,<br class="hidden sm:block"> създадени за твоя повод</h2>
+            <p class="mt-3 max-w-xl leading-relaxed text-slate-300">Избери празника, настроението и дължината. Добави име или личен детайл и получи поздрав, който можеш да редактираш, копираш и изпратиш.</p>
+          </div>
+          <div class="hidden shrink-0 rounded-2xl border border-white/10 bg-white/5 p-4 text-center sm:block"><i class="fa-solid fa-envelope-open-text text-2xl text-amber-200"></i><p class="mt-2 text-xs font-bold text-slate-300">Твоите думи.<br>Твоят специален жест.</p></div>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="rounded-3xl border border-white/10 bg-slate-950/50 p-5 sm:p-6">
+            <p class="mb-4 text-xs font-black tracking-widest text-indigo-200">01 · НАСТРОЙ ПОЗДРАВА</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="text-xs font-bold text-slate-300">Повод
+                <select id="wishOccasion" class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm text-white outline-none focus:border-indigo-400">
+                  <option value="birthday">Рожден ден</option><option value="nameDay">Имен ден</option><option value="jubilee">Юбилей</option><option value="wedding">Сватба</option><option value="anniversary">Годишнина от сватба</option><option value="newborn">Раждане на дете</option><option value="baptism">Кръщене</option><option value="graduation">Завършване</option><option value="newJob">Нова работа / повишение</option><option value="newHome">Нов дом</option><option value="retirement">Пенсиониране</option><option value="march8">8 март</option><option value="christmas">Коледа</option><option value="newYear">Нова година</option><option value="thankYou">Благодарност</option><option value="getWell">Бързо оздравяване</option><option value="goodLuck">Успех и ново начало</option>
+                </select>
+              </label>
+              <label class="text-xs font-bold text-slate-300">Стил на посланието
+                <select id="wishTone" class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm text-white outline-none focus:border-indigo-400">
+                  <option value="сърдечен">Сърдечен и искрен</option><option value="забавен">Забавен и закачлив</option><option value="поетичен">Поетичен и красив</option><option value="елегантен">Елегантен и изискан</option><option value="официален">Официален и уважителен</option><option value="приятелски">Непринуден и приятелски</option><option value="вдъхновяващ">Вдъхновяващ и мотивиращ</option><option value="кратък">Кратък и запомнящ се</option>
+                </select>
+              </label>
+              <label class="text-xs font-bold text-slate-300">Дължина
+                <select id="wishLength" class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm text-white outline-none focus:border-indigo-400"><option value="short">Кратко · 1–2 изречения</option><option value="medium" selected>Стандартно · 3–4 изречения</option><option value="long">Разгърнато · 5–6 изречения</option></select>
+              </label>
+              <label class="text-xs font-bold text-slate-300">За кого е поздравът?
+                <input id="wishRecipient" type="text" maxlength="40" autocomplete="given-name" placeholder="Име, например Мария" class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm text-white placeholder:text-slate-500 outline-none focus:border-indigo-400">
+              </label>
+              <label class="text-xs font-bold text-slate-300 sm:col-span-2">Добави лично изречение <span class="font-normal text-slate-500">· по желание</span>
+                <input id="wishPersonalNote" type="text" maxlength="180" placeholder="Например: Пътуването до Япония да бъде незабравимо." class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm text-white placeholder:text-slate-500 outline-none focus:border-indigo-400">
+                <span class="mt-1 block font-normal text-slate-500">Напиши го в избрания стил — ще добавим изречението без да го променяме.</span>
+              </label>
+            </div>
+            <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-xs leading-relaxed text-slate-500">Поздравът се създава тук, на устройството ти — не изпращаме въведените данни никъде.</p>
+              <button id="generateWish" class="shrink-0 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3 font-black text-white shadow-lg shadow-indigo-950/40 transition hover:from-indigo-400 hover:to-violet-400"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Създай поздрав</button>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-3xl border border-amber-200/15 bg-gradient-to-br from-amber-100/[.07] to-white/[.03] p-5 sm:p-6">
+            <div class="flex items-center justify-between gap-3">
+              <div><p class="text-xs font-black tracking-widest text-amber-200">02 · ТВОЕТО ПОСЛАНИЕ</p><h3 class="mt-1 text-lg font-black">Готово за споделяне</h3></div>
+              <i class="fa-solid fa-pen-to-square text-xl text-amber-200/80" aria-hidden="true"></i>
+            </div>
+            <label for="generatedWish" class="sr-only">Редактирай създадения поздрав</label>
+            <textarea id="generatedWish" rows="8" maxlength="1200" placeholder="Твоят персонален поздрав ще се появи тук. Можеш да го редактираш преди да го изпратиш." class="mt-4 min-h-48 w-full flex-1 resize-y rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-base leading-relaxed text-slate-100 placeholder:text-slate-500 outline-none focus:border-amber-200/50" aria-live="polite"></textarea>
+            <div class="mt-2 flex items-center justify-between text-xs text-slate-500"><span id="wishStatus" aria-live="polite">Избери повод и стил, за да започнеш.</span><span id="wishCharCount">0 / 1200</span></div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <button id="copyGeneratedWish" class="rounded-xl bg-slate-800 px-4 py-2.5 text-sm font-bold transition hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button>
+              <button id="shareGeneratedWish" class="rounded-xl bg-[#7360f2] px-4 py-2.5 text-sm font-bold transition hover:bg-[#5b4adf]"><i class="fa-brands fa-viber mr-2"></i>Изпрати по Viber</button>
+              <button id="regenerateWish" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 transition hover:bg-white/5"><i class="fa-solid fa-arrows-rotate mr-2"></i>Друг вариант</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="mb-6 flex flex-col gap-3 sm:flex-row">
+      <label class="flex-1">
+        <span class="sr-only">Търси пожелание</span>
+        <input id="wishSearch" type="search" placeholder="Търси в пожеланията…" class="w-full rounded-xl border border-line bg-card px-4 py-3 text-sm text-white outline-none focus:border-indigo-400">
+      </label>
+      <button id="showAllBottom" class="rounded-xl border border-line bg-card px-4 py-3 text-sm font-bold text-slate-300 hover:text-white">Покажи всички</button>
+      <p id="wishCount" class="self-center text-xs text-slate-500" aria-live="polite"></p>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <aside class="w-full lg:w-64 flex-shrink-0">
+        <div class="bg-card border border-line rounded-2xl p-5 lg:sticky lg:top-24">
+          <h2 class="font-black mb-4 flex items-center gap-2"><i class="fa-solid fa-list-ul text-brand"></i> Категории</h2>
+          <nav class="space-y-1 text-sm" id="sideNav">
+            <p class="px-3 py-2 rounded-xl bg-brand font-bold">Рожден ден</p>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="birth-man" href="#birth-man">За мъж</a>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="birth-woman" href="#birth-woman">За жена</a>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="birth-kid" href="#birth-kid">За дете</a>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="jubilee" href="#jubilee">Юбилей</a>
+            <p class="px-3 py-2 rounded-xl font-bold mt-3">Имен ден</p>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="nameday-gen" href="#nameday-gen">Общи</a>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="nameday-man" href="#nameday-man">За мъж</a>
+            <a class="nav-link block pl-5 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" data-filter="nameday-woman" href="#nameday-woman">За жена</a>
+            <a class="nav-link block px-3 py-2 rounded-xl font-bold text-slate-200 hover:bg-slate-800 mt-2" data-filter="wedding" href="#wedding">Сватба и годишнина</a>
+            <a class="nav-link block px-3 py-2 rounded-xl font-bold text-slate-200 hover:bg-slate-800" data-filter="newborn" href="#newborn">Новородено / Кръщене</a>
+            <a class="nav-link block px-3 py-2 rounded-xl font-bold text-slate-200 hover:bg-slate-800" data-filter="march8" href="#march8">Осми март / Ден на майката</a>
+            <a class="nav-link block px-3 py-2 rounded-xl font-bold text-red-400 hover:bg-red-950 mt-2" data-filter="funny" href="#funny"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Забавни (18+)</a>
+            <button id="showAll" class="w-full mt-3 py-2 rounded-xl border border-line text-slate-400 hover:text-white font-bold">Покажи всички</button>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="flex-1 masonry" id="grid">
+
+        <article id="birth-man" data-cat="birth-man" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+          <span class="inline-block px-2 py-1 bg-blue-500/15 text-blue-300 rounded text-xs font-black mb-4">РОЖДЕН ДЕН · ЗА МЪЖ</span>
+          <p id="w-1" class="leading-relaxed text-slate-200 mb-5">Честит рожден ден, приятелю! Пожелавам ти гръб, който не се пречупва, ръце, които довършват започнатото, и сърце, което остава меко за близките, дори когато светът е груб. Нека здравето ти бъде като добър двигател — тихо, надеждно и готово за дълъг път. Да имаш работа, от която се гордееш, приятели, които идват без да ги викаш, и вечери, в които чашата е пълна, а масата — шумна. Бъди стълб, без да ставаш стена. Наздраве за още една обиколка около слънцето!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-1')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-1')" class="px-3 rounded-xl bg-[#7360f2] hover:bg-[#5b4adf] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="birth-man" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-sky-500"></div>
+          <span class="inline-block px-2 py-1 bg-sky-500/15 text-sky-300 rounded text-xs font-black mb-4">РОЖДЕН ДЕН · ЗА МЪЖ</span>
+          <p id="w-2" class="leading-relaxed text-slate-200 mb-5">Честит празник! Нека тази година ти донесе не гръмки обещания, а тихи победи: изплатен заем, здрав сън, една идея, която най-сетне проработва, и една обич, която не се нуждае от доказателства. Пожелавам ти мъдрост да различаваш битките, които си струват, от шума, който само краде сили. Да имаш късмет в малките неща — зелена вълна, топъл хляб, честен човек до теб. И да останеш такъв, какъвто си, когато никой не гледа: почтен, смел и малко инат.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-2')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-2')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="birth-woman" data-cat="birth-woman" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-pink-400"></div>
+          <span class="inline-block px-2 py-1 bg-pink-500/15 text-pink-300 rounded text-xs font-black mb-4">РОЖДЕН ДЕН · ЗА ЖЕНА</span>
+          <p id="w-3" class="leading-relaxed text-slate-200 mb-5">Честит рожден ден! Пожелавам ти дни, в които огледалото ти се усмихва първо, а светът после. Нека домът ти мирише на спокойствие, чантата ти да крие и сила, и нежност, а сърцето ти да има място и за мечти, които още нямат име. Бъди любима без да се намаляваш, умна без да се извиняваш, красива без да чакаш позволение. Нека всяка свещичка днес да е малка молба към живота: здраве, любов, пътувания и хора, които помнят рождената ти дата без напомняне.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-3')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-3')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="birth-woman" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-rose-400"></div>
+          <span class="inline-block px-2 py-1 bg-rose-500/15 text-rose-300 rounded text-xs font-black mb-4">РОЖДЕН ДЕН · ЗА ЖЕНА</span>
+          <p id="w-4" class="leading-relaxed text-slate-200 mb-5">Честит празник, скъпа! Пожелавам ти година, в която никой не ти отнема тишината сутрин и радостта вечер. Да имаш здраве като пролет — свежо и упорито. Да срещаш хора, които слушат до край, а не само докато чакат реда си. Нека работата ти носи плод, любовта — сигурност, а пътуванията — спомени, които после разказваш със смях. Остани светлина в стаята, без да гориш за сметка на себе си. Честит рожден ден и още сто хубави глави!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-4')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-4')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="birth-kid" data-cat="birth-kid" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-purple-400"></div>
+          <span class="inline-block px-2 py-1 bg-purple-500/15 text-purple-300 rounded text-xs font-black mb-4">РОЖДЕН ДЕН · ЗА ДЕТЕ</span>
+          <p id="w-5" class="leading-relaxed text-slate-200 mb-5">Честит рожден ден, малко чудо! Пожелавам ти радост, която не се събира в кутия, приятели, с които се играе до залез, и сън, пълен с добри сънища. Расти здраво, любопитно и смело — да питаш „защо?“ без страх и да вярваш, че светът има място за теб. Нека книжките ти бъдат приключение, дворът — царство, а семейството — най-сигурният замък. Днес цялата къща е украсена заради теб. Сладко да ти е и още много свещички с усмивка!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-5')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-5')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="birth-kid" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-violet-400"></div>
+          <span class="inline-block px-2 py-1 bg-violet-500/15 text-violet-300 rounded text-xs font-black mb-4">РОЖДЕН ДЕН · ЗА ДЕТЕ</span>
+          <p id="w-6" class="leading-relaxed text-slate-200 mb-5">Честит рожден ден! Нека обувките ти се износват от игри, а не от притеснения. Пожелаваме ти учители, които виждат искрата в теб, баба и дядо с безкрайни приказки и родители, които винаги имат минута за прегръдка. Да имаш любим цвят, любима песен и любим човек, който помни и двете. Расти умно, бъди добро и не забравяй да се смееш толкова силно, че съседите да се усмихват без да знаят защо.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-6')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-6')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="jubilee" data-cat="jubilee" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-amber-400"></div>
+          <span class="inline-block px-2 py-1 bg-amber-500/15 text-amber-300 rounded text-xs font-black mb-4">ЮБИЛЕЙ</span>
+          <p id="w-7" class="leading-relaxed text-slate-200 mb-5">Честит кръгъл юбилей! Годините не те намаляват — те те сгъстяват: в истории, в ръце, които знаят занаят, в поглед, който вече не се лъже лесно. Пожелавам ти здраве, което да носи мъдростта ти още дълго, внуци или приятели, които слушат спомените ти като съкровище, и дни без бързане. Нека масата днес е дълга, чашите — пълни, а тостовете — искрени. Ти вече си доказал, че животът се живее достойно. Оттук нататък — само светлина и спокойни вечери.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-7')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-7')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="jubilee" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-yellow-400"></div>
+          <span class="inline-block px-2 py-1 bg-yellow-500/15 text-yellow-200 rounded text-xs font-black mb-4">ЮБИЛЕЙ</span>
+          <p id="w-8" class="leading-relaxed text-slate-200 mb-5">Честит юбилей! Погледни назад — не като към край, а като към добре изорана нива. Пожелавам ти още реколти: здраве, пътувания без багаж от грижи, хора, които идват „за малко“ и остават до зори. Нека кръглата година ти донесе не подаръци, които се прашасват, а жестове, които се помнят. Остани любопитен. Светът още има какво да ти покаже, а ти още имаш какво да му кажеш.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-8')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-8')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="nameday-gen" data-cat="nameday-gen" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-indigo-400"></div>
+          <span class="inline-block px-2 py-1 bg-indigo-500/15 text-indigo-300 rounded text-xs font-black mb-4">ИМЕН ДЕН · ОБЩИ</span>
+          <p id="w-9" class="leading-relaxed text-slate-200 mb-5">Честит имен ден! Името ти днес е повод масата да се събере и светът да каже „благодарим, че го носиш с чест“. Пожелавам ти закрила като стара икона — тиха, но сигурна. Да имаш здраве, работа с плод и хора, които помнят не само датата, а и характера ти. Нека светецът, чието име носиш, ти държи вратата отворена, когато пътят се стеснява. Честит празник и берекет в дома!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-9')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-9')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="nameday-gen" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-indigo-300"></div>
+          <span class="inline-block px-2 py-1 bg-indigo-500/15 text-indigo-300 rounded text-xs font-black mb-4">ИМЕН ДЕН · ОБЩИ</span>
+          <p id="w-10" class="leading-relaxed text-slate-200 mb-5">Честит празник на името! Пожелавам ти тост, който не се забравя, погача, която се къса с усмивка, и вести, които чукаш на дърво от радост, не от страх. Нека тази година името ти се произнася с уважение в кантори, в компания и у дома. Бъди здрав, бъди обичан, бъди спокоен. И когато някой пита „кой празнува днес?“, отговорът да звучи гордо — ти.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-10')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-10')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="nameday-man" data-cat="nameday-man" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-cyan-400"></div>
+          <span class="inline-block px-2 py-1 bg-cyan-500/15 text-cyan-300 rounded text-xs font-black mb-4">ИМЕН ДЕН · ЗА МЪЖ</span>
+          <p id="w-11" class="leading-relaxed text-slate-200 mb-5">Честит имен ден, мъжкото име на къщата! Пожелавам ти здраве като дъб, дума, която тежи, и късмет, който идва, когато вече си свършил работата. Нека приятелите ти вдигат чаши не от задължение, а защото наистина им липсваш. Да имаш сила за семейството и мекота за децата. Името ти да отваря врати, а характерът ти да ги държи отворени за честни хора. Наздраве и берекет!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-11')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-11')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="nameday-man" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-teal-400"></div>
+          <span class="inline-block px-2 py-1 bg-teal-500/15 text-teal-300 rounded text-xs font-black mb-4">ИМЕН ДЕН · ЗА МЪЖ</span>
+          <p id="w-12" class="leading-relaxed text-slate-200 mb-5">Честит празник! Носи името си като добре скроено палто — с достоинство, без показност. Пожелавам ти път без дупки, работа без унижение и дом, в който те чакат. Нека днес телефонът ти звъни от хора, които помнят, а не от сметки. Бъди здрав, бъди спокоен, бъди човек, на когото може да се разчита в дъжд и в празник.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-12')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-12')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="nameday-woman" data-cat="nameday-woman" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-fuchsia-400"></div>
+          <span class="inline-block px-2 py-1 bg-fuchsia-500/15 text-fuchsia-300 rounded text-xs font-black mb-4">ИМЕН ДЕН · ЗА ЖЕНА</span>
+          <p id="w-13" class="leading-relaxed text-slate-200 mb-5">Честит имен ден! Името ти днес звъни като камбанка — ясно, топло, наше. Пожелавам ти здраве, което не се пазари, любов, която не се крие, и дни, в които никой не ти казва да бъдеш „по-малко“. Нека цветята на масата стоят дълго, а хората около теб — още по-дълго. Бъди пазена, бъди видяна, бъди щастлива без да даваш отчет. Честит празник, хубаво име, хубав човек!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-13')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-13')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="nameday-woman" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-pink-300"></div>
+          <span class="inline-block px-2 py-1 bg-pink-500/15 text-pink-300 rounded text-xs font-black mb-4">ИМЕН ДЕН · ЗА ЖЕНА</span>
+          <p id="w-14" class="leading-relaxed text-slate-200 mb-5">Честит празник! Пожелавам ти сутрин без бързане, приятелки, които идват с торта, и вечер, в която се чувстваш най-важният човек в стаята — защото си. Нека името ти се произнася с усмивка в целия род. Да имаш сила за грижите и време за себе си. И една малка магия: всички пожелания днес да се сбъднат поне наполовина — което вече е повече, отколкото повечето хора смеят да искат.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-14')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-14')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="wedding" data-cat="wedding" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-rose-500"></div>
+          <span class="inline-block px-2 py-1 bg-rose-500/15 text-rose-300 rounded text-xs font-black mb-4">СВАТБА</span>
+          <p id="w-15" class="leading-relaxed text-slate-200 mb-5">Честита сватба! Днес два пътя стават един, без никой от двамата да изчезне. Пожелавам ви търпение в малките дни и смелост в големите. Да се карате за прозореца, не за сърцето. Да има хляб на масата, смях в коридора и ръка, която намира другата ръка в тъмното без да търси. Пазете пламъка — не като фойерверк, а като жив огън, който се подхранва всяка вечер. Горчиво! И после — сладко за цял живот.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-15')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-15')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="wedding" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-red-400"></div>
+          <span class="inline-block px-2 py-1 bg-red-500/15 text-red-300 rounded text-xs font-black mb-4">ГОДИШНИНА</span>
+          <p id="w-16" class="leading-relaxed text-slate-200 mb-5">Честита годишнина! Пожелавам ви още една обиколка заедно — със същите шеги, с нови бръчки, с по-тиха любов, която обаче държи повече. Нека спомените ви бъдат по-силни от сметките, а прошката — по-бърза от гордостта. Благодарим ви, че показвате, че бракът не е филм, а добре сготвена супа: всеки ден се бърка, солта се пипа, а накрая топли. Още сто години ръка за ръка!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-16')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-16')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="wedding" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-orange-400"></div>
+          <span class="inline-block px-2 py-1 bg-orange-500/15 text-orange-300 rounded text-xs font-black mb-4">СВАТБА</span>
+          <p id="w-17" class="leading-relaxed text-slate-200 mb-5">Младоженци, честит ден! Нека кумовете ви пазят, музиката не спира рано, а първият ви дом мирише на ново начало, не на дългове. Пожелавам ви да останете отбор, когато светът ви дели на „той“ и „тя“. Да пътувате, да се връщате, да си казвате истината без да я хвърляте като камък. И когато някой ви пита тайната — да се погледнете и да се усмихнете, защото тайната е проста: избирате се всеки ден отново.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-17')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-17')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="newborn" data-cat="newborn" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-sky-400"></div>
+          <span class="inline-block px-2 py-1 bg-sky-500/15 text-sky-300 rounded text-xs font-black mb-4">НОВОРОДЕНО</span>
+          <p id="w-18" class="leading-relaxed text-slate-200 mb-5">Честита рожба! Нека малкото ви ангелче донесе в дома ви шум, който обичате, безсъние, което си струва, и любов, която изненадва дори бабите. Пожелавам здраве на бебето, сили на майката, гордост на бащата и роднини, които помагат, вместо само да съветват. Расти, малко съкровище, под мек покрив и твърди ръце. Светът стана по-добър с една люлка.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-18')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-18')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="newborn" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-cyan-300"></div>
+          <span class="inline-block px-2 py-1 bg-cyan-500/15 text-cyan-200 rounded text-xs font-black mb-4">КРЪЩЕНЕ</span>
+          <p id="w-19" class="leading-relaxed text-slate-200 mb-5">Честито кръщене! Нека кръстникът и кръстницата бъдат щит, свещената вода — благослов, а името — път с посока. Пожелавам на детето здраве, любопитство и добро сърце; на родителите — търпение и радост, която надделява над умората. Да расте в светлина, да пада и да става, да бъде пазено от лошо око и от лоши примери. Днес небето има още едно име в списъка. Наздраве за цялото семейство!</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-19')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-19')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="march8" data-cat="march8" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-fuchsia-500"></div>
+          <span class="inline-block px-2 py-1 bg-fuchsia-500/15 text-fuchsia-300 rounded text-xs font-black mb-4">8 МАРТ</span>
+          <p id="w-20" class="leading-relaxed text-slate-200 mb-5">Честит Осми март! Не си цвете в саксия — си градина, буря и мек дъжд в един и същи ден. Пожелавам ти да бъдеш празнувана не само днес, а всеки път, когато свършиш работата на трима и пак имаш усмивка. Нека букетът ти бъде честен, думите — без шаблон, а грижата към теб — ежедневна, не сезонна. Бъди силна без да си сама, нежна без да си невидима. Светът е по-човешки, защото си в него.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-20')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-20')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="march8" class="masonry-item bg-card border border-line rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-red-300"></div>
+          <span class="inline-block px-2 py-1 bg-red-500/15 text-red-300 rounded text-xs font-black mb-4">ДЕН НА МАЙКАТА</span>
+          <p id="w-21" class="leading-relaxed text-slate-200 mb-5">Честит Ден на майката! Ти си първият дом, който някой е познавал — топъл, строг, безценен. Пожелавам ти почивка, която не е „пет минути на дивана“, здраве, което да изпревари грижите, и деца, които най-сетне казват „благодаря“ без да чакат празник. Нека ръцете ти, които са оправяли света по една риза наведнъж, днес бъдат целунати, а сърцето ти — облекчено. Обичаме те повече, отколкото умеем да кажем.</p>
+          <div class="flex gap-2"><button onclick="copyWish('w-21')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold hover:bg-slate-700"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-21')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article id="funny" data-cat="funny" class="masonry-item bg-slate-950 border border-red-900/60 rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-red-600"></div>
+          <span class="inline-flex items-center gap-1 px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-black mb-4"><i class="fa-solid fa-triangle-exclamation"></i> 18+</span>
+          <p id="w-22" class="leading-relaxed text-slate-300 mb-5 blur-sm select-none adult-text">Честит рожден ден! Пожелавам ти толкова любов, че съседите да чукат не от ревност, а от завист; толкова пари, че банката да ти се обажда със „моля“; и толкова здраве, че купоните да се предадат преди черния дроб. Ако тази година пак сбъркаш хората — поне да е с хубави. Наздраве, грешнико с ангелско лице!</p>
+          <div class="adult-overlay absolute inset-0 flex items-center justify-center bg-slate-950/70 rounded-2xl">
+            <button onclick="unlockAdult(this)" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-black">Разкрий 18+</button>
+          </div>
+          <div class="flex gap-2 relative z-10"><button onclick="copyWish('w-22')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-22')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="funny" class="masonry-item bg-slate-950 border border-red-900/60 rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-red-600"></div>
+          <span class="inline-flex items-center gap-1 px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-black mb-4"><i class="fa-solid fa-triangle-exclamation"></i> 18+</span>
+          <p id="w-23" class="leading-relaxed text-slate-300 mb-5 blur-sm select-none adult-text">Честит празник! Пожелавам ти съпруг/съпруга, който да те търси вечерта, шеф, който да те търси по-малко, и тъща/свекърва, която да те търси само с баница, не с нравоучения. Да имаш сила в кръста, смисъл в главата и компания в леглото. Ако животът пак ти спре номера — поне да е смешен, за да има какво да разказваш на масата.</p>
+          <div class="adult-overlay absolute inset-0 flex items-center justify-center bg-slate-950/70 rounded-2xl">
+            <button onclick="unlockAdult(this)" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-black">Разкрий 18+</button>
+          </div>
+          <div class="flex gap-2 relative z-10"><button onclick="copyWish('w-23')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-23')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+        <article data-cat="funny" class="masonry-item bg-slate-950 border border-red-900/60 rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-red-600"></div>
+          <span class="inline-flex items-center gap-1 px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-black mb-4"><i class="fa-solid fa-triangle-exclamation"></i> 18+</span>
+          <p id="w-24" class="leading-relaxed text-slate-300 mb-5 blur-sm select-none adult-text">Юбилей? Честито, че още дишаш, пиеш и разказваш лъжи, които вече никой не проверява! Пожелавам ти колене като на двадесетгодишен, апетит като на войник и репутация, която роднините обсъждат шепнешком — значи си живял. Наздраве! Който не пие за здравето ти днес, да му се залее клавиатурата.</p>
+          <div class="adult-overlay absolute inset-0 flex items-center justify-center bg-slate-950/70 rounded-2xl">
+            <button onclick="unlockAdult(this)" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-black">Разкрий 18+</button>
+          </div>
+          <div class="flex gap-2 relative z-10"><button onclick="copyWish('w-24')" class="flex-1 py-2.5 bg-slate-800 rounded-xl text-sm font-bold"><i class="fa-regular fa-copy mr-2"></i>Копирай</button><button onclick="shareViber('w-24')" class="px-3 rounded-xl bg-[#7360f2] flex items-center justify-center gap-1"><i class="fa-brands fa-viber"></i><span class="hidden sm:inline text-xs font-bold">Прати по Viber</span></button></div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-line bg-slate-950 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-3 items-center justify-between text-sm text-slate-500">
+      <p>© 2026 usmivka</p>
+      <div class="flex gap-4">
+        <a class="hover:text-accent" href="index.html">Днес</a>
+        <a class="hover:text-accent" href="jokes.html">Вицове</a>
+        <a class="hover:text-accent" href="games.html">Игри</a>
+      </div>
+    </div>
+  </footer>
+  <div id="toasts" class="fixed bottom-4 right-4 z-[80] space-y-2"></div>
+  <script>
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+    function toast(msg) {
+      const box = document.createElement("div");
+      box.className = "toast bg-emerald-500 text-white px-4 py-3 rounded-xl font-semibold shadow-lg";
+      box.textContent = msg;
+      document.getElementById("toasts").appendChild(box);
+      setTimeout(() => box.remove(), 3000);
+    }
+    function copyWish(id) {
+      const text = document.getElementById(id).innerText.trim();
+      navigator.clipboard.writeText(text).then(() => toast("Копирано!")).catch(() => {
+        const ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        document.execCommand("copy"); ta.remove(); toast("Копирано!");
+      });
+    }
+    function shareViber(id) {
+      const text = document.getElementById(id).innerText.trim();
+      window.location.href = "viber://forward?text=" + encodeURIComponent(text);
+    }
+    function unlockAdult(btn) {
+      const card = btn.closest("article");
+      card.querySelector(".adult-text").classList.remove("blur-sm", "select-none");
+      card.querySelector(".adult-overlay").remove();
+    }
+    function filterCat(cat) {
+      activeCategory = cat || "";
+      applyWishFilters();
+    }
+    let activeCategory = "";
+    let wishQuery = "";
+    function applyWishFilters() {
+      let visible = 0;
+      document.querySelectorAll("#grid article").forEach(el => {
+        const matchesCategory = !activeCategory || el.dataset.cat === activeCategory;
+        const matchesQuery = !wishQuery || el.innerText.toLocaleLowerCase("bg").includes(wishQuery);
+        el.style.display = matchesCategory && matchesQuery ? "" : "none";
+        if (matchesCategory && matchesQuery) visible++;
+      });
+      document.getElementById("wishCount").textContent = `Показани ${visible} пожелания`;
+    }
+    document.querySelectorAll("#sideNav [data-filter]").forEach(a => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        filterCat(a.dataset.filter);
+        const t = document.getElementById(a.dataset.filter);
+        if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+    document.getElementById("showAll").addEventListener("click", () => filterCat(""));
+    document.getElementById("showAllBottom").addEventListener("click", () => filterCat(""));
+    document.getElementById("wishSearch").addEventListener("input", event => {
+      wishQuery = event.target.value.trim().toLocaleLowerCase("bg");
+      applyWishFilters();
+    });
+
+    const occasionContent = {
+      birthday: { greeting: "Честит рожден ден", detail: ["Днес е чудесен повод да отпразнуваме човека, който си, и всичко хубаво, което носиш на хората около себе си.", "Нека новата ти лична година започне с усмивки и продължи с поводи за гордост."] },
+      nameDay: { greeting: "Честит имен ден", detail: ["Нека името ти се произнася с обич, а домът ти се изпълни с хора и хубави наздравици.", "Празнувай името си с гордост и нека то ти носи много радостни срещи."] },
+      jubilee: { greeting: "Честит юбилей", detail: ["Днес празнуваме годините, събрали мъдрост, смели решения и безброй истории.", "Нека следващата глава от живота ти бъде богата на здраве, спокойствие и сбъднати планове."] },
+      wedding: { greeting: "Честита сватба", detail: ["Нека общият ви път бъде изпълнен с доверие, приятелство и смях във всеки сезон.", "Пожелавам ви да се избирате отново всеки ден и да превръщате малките мигове в големи спомени."] },
+      anniversary: { greeting: "Честита годишнина", detail: ["Нека споделените ви години бъдат само началото на още много красиви истории.", "Пазете нежността, чувството за хумор и малките ритуали, които правят любовта ви ваша."] },
+      newborn: { greeting: "Честита рожба", detail: ["Нека мъничкото ви съкровище расте здраво, обичано и заобиколено от доброта.", "Пожелавам на цялото семейство нежни мигове, сили за новото начало и много детски усмивки."] },
+      baptism: { greeting: "Честито кръщене", detail: ["Нека този светъл ден остане красив спомен за цялото семейство.", "Пожелавам на детето здраве, добри хора по пътя и дом, изпълнен с обич и подкрепа."] },
+      graduation: { greeting: "Поздравления за завършването", detail: ["Днес заслужено празнуваш труда, постоянството и пътя, който извървя дотук.", "Нека наученото ти даде смелост да откриваш нови възможности и да следваш собствената си посока."] },
+      newJob: { greeting: "Поздравления за новата работа", detail: ["Нека новата работа ти донесе вдъхновение, добър екип и удовлетворение от постигнатото.", "Пожелавам ти уверен старт, любопитни предизвикателства и признание за усилията ти."] },
+      newHome: { greeting: "Честит нов дом", detail: ["Нека домът ви бъде място за спокойствие, споделени вечери и топли посрещания.", "Пожелавам ви да изпълните новото си пространство с уют, смях и любими хора."] },
+      retirement: { greeting: "Честито пенсиониране", detail: ["Нека започващото свободно време ти донесе любими занимания и дни без бързане.", "Пожелавам ти заслужен отдих, нови малки приключения и време за всичко, което все отлагаше."] },
+      march8: { greeting: "Честит 8 март", detail: ["Нека признателността и грижата към теб не са само за един ден в годината.", "Пожелавам ти уважение, равни възможности и смелост да избираш пътя, който те прави щастлива."] },
+      christmas: { greeting: "Светла Коледа", detail: ["Нека празничните дни донесат мир, топлина и близост около семейната маса.", "Пожелавам ви споделени мигове, уютен дом и надежда, която остава и след празниците."] },
+      newYear: { greeting: "Честита Нова година", detail: ["Нека новата година отвори място за добри решения, смели мечти и истински радостни дни.", "Пожелавам ти повече поводи за гордост, спокойствие в делниците и приключения в почивните дни."] },
+      thankYou: { greeting: "Благодаря ти от сърце", detail: ["Твоето внимание и подкрепа направиха истинска разлика — ценя го повече, отколкото думите могат да кажат.", "Благодаря за щедростта, времето и добрината, които сподели с мен."] },
+      getWell: { greeting: "Пожелавам ти бързо възстановяване", detail: ["Дай си време за почивка и нека всеки нов ден носи повече сили и спокойствие.", "Изпращам ти топли мисли и пожелание скоро отново да се радваш на любимите си неща."] },
+      goodLuck: { greeting: "Успех в новото начало", detail: ["Нека увереността ти бъде по-силна от съмненията, а всяка стъпка те приближава до целта.", "Пожелавам ти смелост да опитваш, търпение да продължаваш и радост от постигнатото."] }
+    };
+    const toneContent = {
+      "сърдечен": { wishes: ["Пожелавам ти здраве, вътрешен мир и хора, пред които можеш да бъдеш напълно себе си.", "Нека в ежедневието ти има повече тихи радости, искрени разговори и прегръдки навреме.", "Бъди обичан не само за това, което правиш, а и просто заради човека, който си.", "Нека добрината, която даваш, се връща при теб умножена.", "Пази мечтите си и си оставяй време да им се радваш, когато се сбъднат.", "Нека винаги намираш опора в близките си и смелост в собственото си сърце."], closes: ["С много обич и най-топли пожелания!", "Прегръщам те и ти желая прекрасен празник!", "Нека хубавото тепърва предстои!", "Бъди щастлив и не забравяй колко си ценен!"] },
+      "забавен": { wishes: ["Пожелавам ти толкова поводи за празнуване, че календарът сам да поиска почивен ден.", "Нека проблемите ти са кратки, Wi-Fi сигналът — силен, а кафето — винаги точно навреме.", "Желая ти джобове, пълни с късмет, и хладилник, който мистериозно се зарежда сам.", "Нека плановете ти се сбъдват по-бързо, отколкото пристига сметката.", "Пожелавам ти много смях и поне един човек, който да каже „аз ще измия чиниите“.", "Нека всеки понеделник се държи прилично и не разваля настроението ти."], closes: ["Празнувай смело — калориите днес са в отпуск!", "Наздраве за теб и за утрешното ти чувство за хумор!", "Весел празник и никакви служебни имейли днес!", "Усмивки, торта и нито една досадна задача!"] },
+      "поетичен": { wishes: ["Нека дните ти се отварят като прозорец към слънчева утрин.", "Нека в сърцето ти винаги има място за надежда, а по пътя — светли хора.", "Пожелавам ти мечти с крила и достатъчно смелост, за да им покажеш посоката.", "Нека малките радости се събират в голямо щастие, което ти е по мярка.", "Нека всяка твоя крачка намира своята светлина и всеки спомен — своята усмивка.", "Пожелавам ти дни, които ухаят на спокойствие, обич и нови възможности."], closes: ["Светлина по пътя ти и обич във всеки ден!", "Нека красивото винаги намира път до теб!", "С най-нежни пожелания за твоя празник!", "Нека животът ти пише още много щастливи страници!"] },
+      "елегантен": { wishes: ["Пожелавам ти здраве, хармония и успех, който носи истинско удовлетворение.", "Нека новите възможности идват в точния момент, а добрите решения оставят трайна следа.", "Желая ти дни с мярка, смисъл и достатъчно време за хората и нещата, които цениш.", "Нека увереността и спокойствието бъдат твои постоянни спътници.", "Пожелавам ти вдъхновение за бъдещето и благодарност за всичко постигнато.", "Нека всеки следващ етап ти носи повече свобода, баланс и радост."], closes: ["С най-добри пожелания и искрено уважение!", "За още много красиви поводи и споделени успехи!", "Нека празникът ти бъде толкова специален, колкото заслужаваш!", "С пожелание за здраве, благополучие и вдъхновение!"] },
+      "официален": { wishes: ["Пожелавам Ви здраве, благополучие и удовлетворение във всяко начинание.", "Нека усилията Ви бъдат възнаградени с заслужен успех и признание.", "Желая Ви увереност в решенията, последователност в целите и много поводи за гордост.", "Нека новите възможности Ви носят развитие, стабилност и удовлетворение.", "Пожелавам Ви спокойствие, благоденствие и подкрепа от достойни хора.", "Нека постигнатото бъде основа за още по-успешни и вдъхновяващи дни."], closes: ["Приемете моите най-сърдечни поздрави и пожелания!", "С уважение и пожелание за бъдещи успехи!", "Честит празник и много здраве и благополучие!", "Моля, приемете най-добрите ми пожелания!"] },
+      "приятелски": { wishes: ["Пожелавам ти хора, с които можеш да говориш с часове и да мълчиш спокойно.", "Нека ти се случват хубави неща — и да имаш любим човек, с когото да ги отпразнуваш.", "Желая ти повече спонтанни планове, свободни вечери и смях до сълзи.", "Нека късметът те намира дори когато не го търсиш.", "Пожелавам ти сили за важните неща и лекота за всичко останало.", "Нека всеки ден ти носи поне една история, която си струва да разкажеш."], closes: ["Прегръдки и да си изкараш страхотно!", "Наздраве за теб — винаги си заслужава да те празнуваме!", "Бъди все така страхотен човек!", "Чакам да разкажеш как е минал празникът!"] },
+      "вдъхновяващ": { wishes: ["Вярвай в посоката си — постоянството превръща смелите идеи в резултати.", "Нека всяко предизвикателство ти напомня колко повече можеш, отколкото си мислиш.", "Пожелавам ти кураж да започваш, търпение да продължаваш и мъдрост да празнуваш напредъка.", "Големите промени започват с една малка крачка — направи своята с увереност.", "Нека целите ти бъдат смели, стъпките — разумни, а радостта от пътя — истинска.", "Продължавай да растеш по свой начин и не сравнявай своя път с чуждия."], closes: ["Вярвам в теб — най-хубавото предстои!", "Смело напред към всичко, за което мечтаеш!", "Нека увереността ти отваря нови врати!", "Празнувай постигнатото и продължавай напред!"] },
+      "кратък": { wishes: ["Здраве, любов и много поводи за усмивки!", "Нека щастието те намира всеки ден!", "Сбъднати мечти и прекрасни хора до теб!", "Бъди здрав, обичан и истински щастлив!", "Късмет във всяко начинание и радост във всеки ден!", "Нека хубавото тепърва започва!"] , closes: ["Честит празник!", "С обич и усмивка!", "Наздраве за теб!", "Прегръдки!"] }
+    };
+    const formalDetails = [
+      "Нека този специален ден Ви донесе здраве, удовлетворение и поводи за гордост.",
+      "Пожелавам Ви благополучие, спокойствие и достойно признание за всичко постигнато.",
+      "Нека предстоящите дни бъдат изпълнени с добри възможности и успешни начинания.",
+      "Желая Ви вдъхновение, увереност и споделени радости с близките Ви хора."
+    ];
+    const pickPhrase = list => list[Math.floor(Math.random() * list.length)];
+    function pickDistinctPhrase(list, selected) {
+      const stopWords = new Set(["всички", "винаги", "всеки", "всяка", "твоята", "твоите", "нека", "които", "която", "което", "пожелавам", "желая", "повече", "можеш", "теб", "това"]);
+      const keywords = phrase => new Set(phrase.toLocaleLowerCase("bg").replace(/[^а-яё\s]/gi, " ").split(/\s+/).filter(word => word.length > 4 && !stopWords.has(word)));
+      const existing = selected.map(keywords);
+      const distinct = list.filter(phrase => {
+        const words = keywords(phrase);
+        return existing.every(previous => {
+          const shared = [...words].filter(word => previous.has(word)).length;
+          return shared / Math.max(1, Math.min(words.size, previous.size)) < 0.55;
+        });
+      });
+      return pickPhrase(distinct.length ? distinct : list);
+    }
+    function makeWish() {
+      const occasion = occasionContent[document.getElementById("wishOccasion").value];
+      const tone = toneContent[document.getElementById("wishTone").value];
+      const length = document.getElementById("wishLength").value;
+      const toneName = document.getElementById("wishTone").value;
+      const recipient = document.getElementById("wishRecipient").value.trim().replace(/[<>]/g, "");
+      const personalNote = document.getElementById("wishPersonalNote").value.trim().replace(/[<>]/g, "");
+      const greeting = toneName === "официален"
+        ? `Приемете моите поздравления по случай Вашия празник${recipient ? `, ${recipient}` : ""}.`
+        : `${occasion.greeting}${recipient ? `, ${recipient}` : ""}!`;
+      const isShortTone = toneName === "кратък";
+      const sentenceCount = isShortTone ? 1 : ({ short: 1, medium: 1, long: 3 }[length]);
+      const chosenWishes = [];
+      while (chosenWishes.length < sentenceCount) {
+        const phrase = pickDistinctPhrase(tone.wishes, chosenWishes);
+        if (!chosenWishes.includes(phrase)) chosenWishes.push(phrase);
+      }
+      const parts = length === "short" || isShortTone
+        ? [greeting, ...chosenWishes]
+        : [greeting, pickPhrase(toneName === "официален" ? formalDetails : occasion.detail), ...chosenWishes];
+      if (personalNote) parts.push(`${personalNote.replace(/[.!?]+$/, "")}.`);
+      if (length !== "short" && !isShortTone) parts.push(pickDistinctPhrase(tone.closes, chosenWishes));
+      document.getElementById("generatedWish").value = parts.join(" ");
+      updateWishLength();
+      document.getElementById("wishStatus").textContent = "Готово — редактирай текста или го сподели.";
+    }
+    function updateWishLength() {
+      const length = document.getElementById("generatedWish").value.length;
+      document.getElementById("wishCharCount").textContent = `${length} / 1200`;
+    }
+    document.getElementById("generateWish").addEventListener("click", makeWish);
+    document.getElementById("regenerateWish").addEventListener("click", makeWish);
+    document.getElementById("generatedWish").addEventListener("input", () => {
+      updateWishLength();
+      document.getElementById("wishStatus").textContent = "Промените са готови за копиране и споделяне.";
+    });
+    document.getElementById("copyGeneratedWish").addEventListener("click", () => {
+      const text = document.getElementById("generatedWish").value.trim();
+      if (!text) return toast("Първо създай пожелание.");
+      navigator.clipboard.writeText(text).then(() => toast("Пожеланието е копирано!")).catch(() => {
+        const field = document.createElement("textarea"); field.value = text; document.body.appendChild(field); field.select();
+        document.execCommand("copy"); field.remove(); toast("Пожеланието е копирано!");
+      });
+    });
+    document.getElementById("shareGeneratedWish").addEventListener("click", () => {
+      const text = document.getElementById("generatedWish").value.trim();
+      if (!text) return toast("Първо създай пожелание.");
+      window.location.href = "viber://forward?text=" + encodeURIComponent(text);
+    });
+    document.getElementById("wishOccasion").addEventListener("change", () => {
+      document.getElementById("wishStatus").textContent = "Настрой стила и натисни „Създай поздрав“.";
+    });
+    document.getElementById("wishTone").addEventListener("change", () => {
+      document.getElementById("wishStatus").textContent = "Настрой повода и натисни „Създай поздрав“.";
+    });
+    const additionalWishes = [
+      { category: "birth-man", title: "РОЖДЕН ДЕН · ЗА МЪЖ", text: "Честит рожден ден! Пожелавам ти смели идеи, ясна посока и достатъчно време да се наслаждаваш на пътя. Нека здравето ти бъде стабилна опора, работата — повод за удовлетворение, а приятелите — хора, на които можеш да се обадиш и без специален повод. Наздраве за всичко хубаво, което предстои!" },
+      { category: "birth-man", title: "РОЖДЕН ДЕН · ЗА МЪЖ", text: "Бъди здрав, спокоен и верен на себе си! Нека всяка нова година ти носи по една сбъдната мечта, по едно приключение за разказване и хора, с които тишината е също толкова приятна, колкото смехът. Пожелавам ти успех, който си заслужил, и почивка, която наистина ти се полага." },
+      { category: "birth-woman", title: "РОЖДЕН ДЕН · ЗА ЖЕНА", text: "Честит рожден ден! Нека новата ти година бъде създадена по твоя вкус — с повече свобода, вдъхновение и дни, в които се чувстваш точно на мястото си. Пожелавам ти здраве, обич без условия, смели мечти и достатъчно време за всичко, което кара очите ти да светят." },
+      { category: "birth-woman", title: "РОЖДЕН ДЕН · ЗА ЖЕНА", text: "Пожелавам ти да срещаш красота не само в специалните поводи, а и в обикновените сутрини. Нека до теб има хора, които те подкрепят, работа, която ти носи смисъл, и мечти, които стават все по-смели. Бъди здрава, обичана и винаги свободна да избираш своето щастие!" },
+      { category: "birth-kid", title: "РОЖДЕН ДЕН · ЗА ДЕТЕ", text: "Честит рожден ден, шампионе! Пожелавам ти цяла година с весели игри, интересни открития и приятели за най-щурите приключения. Бъди любопитен, задавай въпроси и вярвай в идеите си — светът има нужда от твоята усмивка и въображение!" },
+      { category: "birth-kid", title: "РОЖДЕН ДЕН · ЗА ДЕТЕ", text: "Нека празникът ти бъде пълен с балони, любима торта и подаръци, които чакат да бъдат разопаковани! Расти здраво, смей се от сърце и събирай прекрасни спомени с хората, които те обичат. Пожелаваме ти всеки ден да крие по едно малко чудо!" },
+      { category: "jubilee", title: "ЮБИЛЕЙ", text: "Честит юбилей! Днес празнуваме не просто годините, а характера, добрината и следите, които оставяш в живота на хората около себе си. Нека следващите ти години бъдат богати на здраве, заслужено спокойствие, любими пътувания и срещи, които стоплят сърцето." },
+      { category: "jubilee", title: "ЮБИЛЕЙ", text: "Пожелавам ти да гледаш напред с любопитство и назад с благодарност. Нека натрупаният опит ти носи увереност, а всеки нов ден — свеж повод за усмивка. Бъди здрав, заобиколен от обич и готов за още много хубави глави в своята история!" },
+      { category: "nameday-gen", title: "ИМЕН ДЕН · ОБЩИ", text: "Честит имен ден! Нека името ти винаги се свързва с добро сърце, смела дума и човек, на когото може да се разчита. Пожелавам ти здраве, благополучие и дом, в който гостите идват с усмивка, а си тръгват с обещание скоро да се върнат." },
+      { category: "nameday-gen", title: "ИМЕН ДЕН · ОБЩИ", text: "Днес празнуваш красиво име и още по-красив човек! Нека късметът намира адреса ти без навигация, добрите новини идват навреме, а поводите за наздравица никога не свършват. Честит празник — бъди здрав, обичан и горд с името си!" },
+      { category: "nameday-man", title: "ИМЕН ДЕН · ЗА МЪЖ", text: "Честит имен ден! Нека носиш името си със същата увереност, с която посрещаш всяко предизвикателство. Пожелавам ти крепко здраве, успех в плановете, верни приятели и достатъчно свободни дни за хубавите неща извън работата." },
+      { category: "nameday-man", title: "ИМЕН ДЕН · ЗА МЪЖ", text: "Наздраве за името ти и за човека зад него! Бъди здрав, уважаван и все така надежден за близките си. Нека трудът ти носи резултати, домът — спокойствие, а приятелската маса — дълги разговори и много поводи да се събирате." },
+      { category: "nameday-woman", title: "ИМЕН ДЕН · ЗА ЖЕНА", text: "Честит имен ден! Нека името ти звучи с обич във всеки дом, а твоят собствен ден бъде изпълнен с внимание, цветя и приятни изненади. Пожелавам ти здраве, вдъхновение и хора, които ценят нежността и силата ти всеки ден." },
+      { category: "nameday-woman", title: "ИМЕН ДЕН · ЗА ЖЕНА", text: "Празнувай с усмивка прекрасното си име! Нека то ти носи добри срещи, щастливи вести и увереност да следваш мечтите си. Бъди обичана, спокойна и заобиколена от приятелки, с които и най-обикновеното кафе се превръща в празник." },
+      { category: "wedding", title: "СВАТБА", text: "Честит сватбен ден! Нека любовта ви бъде не само голямото обещание днес, а и малката грижа, търпението и смехът във всеки обикновен ден. Пожелавам ви общи мечти, взаимно уважение и дом, в който винаги има място за още един хубав спомен." },
+      { category: "wedding", title: "СВАТБА", text: "На младото семейство — пожелание за дълъг и красив общ път! Нека умеете да се подкрепяте в трудното, да празнувате успехите си заедно и никога да не губите чувството си за хумор. Любовта ви да расте с годините, а приятелството помежду ви да остава здравата основа на всичко." },
+      { category: "wedding", title: "ГОДИШНИНА", text: "Честита годишнина! Още една година, в която сте доказали, че най-хубавото пътуване е споделеното. Пожелавам ви да продължавате да откривате нови места, любими ритуали и причини да се избирате един друг — днес и през всички следващи години." },
+      { category: "newborn", title: "НОВОРОДЕНО", text: "Честито ново начало и добре дошло на най-малкото ви голямо щастие! Нека бебето расте здраво, спокойно и обградено с нежност. Пожелавам на родителите сили, мъдрост и много мигове, които искате да запомните завинаги — дори когато сте малко недоспали." },
+      { category: "newborn", title: "КРЪЩЕНЕ", text: "Честито кръщене на вашето дете! Нека празничният ден бъде начало на живот, изпълнен с обич, добри приятели и смели мечти. Пожелавам на кръстниците и родителите радостта да бъдат до него, да го насърчават и да му показват света с добрина." },
+      { category: "newborn", title: "НОВОРОДЕНО", text: "Нека първите дни на вашето семейно приключение бъдат нежни, а домът ви — пълен с топлина и малки щастливи открития. Пожелавам на бебето здраве и спокоен сън, а на вас — търпение, подкрепа и време да се радвате на всяка нова усмивка." },
+      { category: "march8", title: "8 МАРТ", text: "Честит празник! Пожелавам ти не само красив букет днес, а уважение, подкрепа и равни възможности през цялата година. Нека гласът ти бъде чут, трудът ти — оценен, а времето за собствените ти мечти винаги да намира място в календара." },
+      { category: "march8", title: "ДЕН НА МАЙКАТА", text: "За теб, която превръщаш грижата в най-сигурното място на света: пожелавам ти здраве, заслужена почивка и безброй поводи да се гордееш. Нека днес получиш поне част от топлината, която всеки ден даваш на хората, които обичаш." },
+      { category: "march8", title: "8 МАРТ", text: "Пожелавам ти смелост да избираш себе си, радост в малките неща и приятелки, с които можеш да бъдеш напълно истинска. Нека животът ти предлага възможности, а ти винаги да имаш свободата и увереността да кажеш: „Това е моят път.“ Честит празник!" },
+      { category: "funny", title: "ЗАБАВНО · 18+", adult: true, text: "Честит празник! Пожелавам ти банковата сметка да расте по-бързо от списъка с абонаменти, а съботната вечер да има продължение само ако неделята е съгласна. Наздраве за добрите решения — и за онези истории, които остават между приятели!" },
+      { category: "funny", title: "ЗАБАВНО · 18+", adult: true, text: "Пожелавам ти толкова късмет, че таксито да пристига точно когато го повикаш, сметката да е разделена правилно от първия път, а груповият чат да избере ресторант преди да си огладнял. Честит празник — възрастният живот е чудесен, стига да има десерт!" },
+      { category: "funny", title: "ЗАБАВНО · 18+", adult: true, text: "Нека тази година имаш повече поводи за наздравица, отколкото за отговор на въпроса „Какво ще правим довечера?“. Пожелавам ти чудесна компания, добра музика и утре сутрин да помниш къде си оставил тортата. Честито — празнувай с мярка и с чувство за хумор!" }
+    ];
+
+    function renderAdditionalWishes() {
+      const grid = document.getElementById("grid");
+      const labels = {
+        "birth-man": "РОЖДЕН ДЕН · ЗА МЪЖ", "birth-woman": "РОЖДЕН ДЕН · ЗА ЖЕНА", "birth-kid": "РОЖДЕН ДЕН · ЗА ДЕТЕ",
+        jubilee: "ЮБИЛЕЙ", "nameday-gen": "ИМЕН ДЕН · ОБЩИ", "nameday-man": "ИМЕН ДЕН · ЗА МЪЖ",
+        "nameday-woman": "ИМЕН ДЕН · ЗА ЖЕНА", wedding: "СВАТБА И ГОДИШНИНА", newborn: "НОВОРОДЕНО / КРЪЩЕНЕ",
+        march8: "ПРАЗНИЦИ · 8 МАРТ / МАЙКАТА", funny: "ЗАБАВНО · 18+"
+      };
+      const colors = {
+        "birth-man": "bg-blue-500", "birth-woman": "bg-pink-400", "birth-kid": "bg-purple-400",
+        jubilee: "bg-amber-400", "nameday-gen": "bg-indigo-400", "nameday-man": "bg-cyan-400",
+        "nameday-woman": "bg-fuchsia-400", wedding: "bg-rose-400", newborn: "bg-sky-400",
+        march8: "bg-fuchsia-500", funny: "bg-red-600"
+      };
+      additionalWishes.forEach((wish, index) => {
+        const wishId = `w-${25 + index}`;
+        const article = document.createElement("article");
+        article.dataset.cat = wish.category;
+        article.className = `masonry-item relative overflow-hidden rounded-2xl border ${wish.adult ? "border-red-900/60 bg-slate-950" : "border-line bg-card"} p-6`;
+
+        const stripe = document.createElement("div");
+        stripe.className = `absolute top-0 left-0 h-1 w-full ${colors[wish.category] || "border-indigo-400"}`;
+        article.appendChild(stripe);
+
+        const badge = document.createElement("span");
+        badge.className = `mb-4 inline-block rounded px-2 py-1 text-xs font-black ${wish.adult ? "bg-red-500/20 text-red-400" : "bg-indigo-500/15 text-indigo-200"}`;
+        badge.textContent = wish.adult ? "18+ · ЗАБАВНО" : labels[wish.category];
+        article.appendChild(badge);
+
+        const text = document.createElement("p");
+        text.id = wishId;
+        text.className = `mb-5 leading-relaxed ${wish.adult ? "adult-text blur-sm select-none text-slate-300" : "text-slate-200"}`;
+        text.textContent = wish.text;
+        article.appendChild(text);
+
+        const actions = document.createElement("div");
+        actions.className = "relative z-10 flex gap-2";
+        const copyButton = document.createElement("button");
+        copyButton.type = "button";
+        copyButton.className = "flex-1 rounded-xl bg-slate-800 py-2.5 text-sm font-bold hover:bg-slate-700";
+        copyButton.innerHTML = '<i class="fa-regular fa-copy mr-2" aria-hidden="true"></i>Копирай';
+        copyButton.addEventListener("click", () => copyWish(wishId));
+        const shareButton = document.createElement("button");
+        shareButton.type = "button";
+        shareButton.className = "flex items-center justify-center gap-1 rounded-xl bg-[#7360f2] px-3";
+        shareButton.setAttribute("aria-label", "Изпрати по Viber");
+        shareButton.innerHTML = '<i class="fa-brands fa-viber" aria-hidden="true"></i><span class="hidden text-xs font-bold sm:inline">Прати по Viber</span>';
+        shareButton.addEventListener("click", () => shareViber(wishId));
+        actions.append(copyButton, shareButton);
+        article.appendChild(actions);
+
+        if (wish.adult) {
+          const overlay = document.createElement("div");
+          overlay.className = "adult-overlay absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-slate-950/80 p-5 text-center";
+          const revealButton = document.createElement("button");
+          revealButton.type = "button";
+          revealButton.className = "rounded-lg bg-red-600 px-4 py-2 text-sm font-black text-white hover:bg-red-500";
+          revealButton.textContent = "Разкрий 18+";
+          revealButton.addEventListener("click", () => unlockAdult(revealButton));
+          overlay.appendChild(revealButton);
+          article.appendChild(overlay);
+        }
+
+        grid.appendChild(article);
+      });
+    }
+    renderAdditionalWishes();
+    applyWishFilters();
+  </script>
+</body>
+</html>

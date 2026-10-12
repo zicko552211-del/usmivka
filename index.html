@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вицове, пожелания и дневен хороскоп | usmivka</title>
+  <meta name="description" content="Открий български вицове, 50 пожелания за всеки повод, дневен хороскоп за 12-те зодии и безплатни игри. Ново настроение всеки ден.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="usmivka">
+  <meta name="theme-color" content="#020617">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bg_BG">
+  <meta property="og:site_name" content="usmivka">
+  <meta property="og:title" content="Вицове, пожелания и дневен хороскоп">
+  <meta property="og:description" content="Вицове, дневен хороскоп за 12-те зодии, поздрави и безплатни браузърни игри на български.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Вицове, пожелания и дневен хороскоп">
+  <meta name="twitter:description" content="Вицове, дневен хороскоп за 12-те зодии, поздрави и безплатни браузърни игри на български.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script src="seo.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#020617",
+            card: "#0f172a",
+            line: "#1e293b",
+            accent: "#facc15",
+            brand: "#6366f1"
+          },
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+    body { font-family: Inter, system-ui, sans-serif; }
+    .glow { box-shadow: 0 0 40px rgba(99,102,241,.18); }
+    .toast { animation: slideIn .3s forwards, fadeOut .3s forwards 2.6s; }
+    @keyframes slideIn { from { opacity:0; transform:translateY(12px);} to { opacity:1; transform:translateY(0);} }
+    @keyframes fadeOut { to { opacity:0; transform:translateY(-8px);} }
+  </style>
+</head>
+<body class="bg-ink text-slate-100 min-h-screen flex flex-col">
+  <nav class="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-black text-lg tracking-tight">
+        <i class="fa-solid fa-face-smile-wink text-accent"></i>
+        <span class="tracking-wider">usmivka</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-sm font-semibold">
+        <a href="index.html" class="px-3 py-2 rounded-lg bg-brand text-white">Днес</a>
+        <a href="jokes.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Топ Вицове</a>
+        <a href="greetings.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Пожелания</a>
+        <a href="games.html" class="px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Игри</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-xl px-2" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-line px-4 py-3 space-y-1 bg-ink">
+      <a href="index.html" class="block px-3 py-2 rounded-lg bg-brand">Днес</a>
+      <a href="jokes.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Топ Вицове</a>
+      <a href="greetings.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Пожелания</a>
+      <a href="games.html" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Игри</a>
+    </div>
+  </nav>
+
+  <header class="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
+    <p class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-accent bg-yellow-400/10 border border-yellow-400/20 px-3 py-1 rounded-full mb-4">
+      <i class="fa-regular fa-calendar"></i> <span id="dateLabel">Зареждане…</span>
+    </p>
+    <h1 class="text-4xl md:text-5xl font-black leading-tight">Днешната доза <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-yellow-300">настроение</span></h1>
+    <p class="mt-3 text-slate-400 max-w-2xl mx-auto">Вицове с „разкрий края“, мъдрост, любопитен факт и пожелания за имен ден — всичко за поне 15 минути усмивки.</p>
+  </header>
+
+  <main class="flex-1 max-w-6xl mx-auto w-full px-4 pb-16 space-y-8">
+    <section class="grid md:grid-cols-2 gap-4">
+      <article class="bg-card border border-line rounded-2xl p-6 glow">
+        <p class="text-xs font-black tracking-widest text-indigo-300 mb-2">ПОГОВОРКА ЗА ДЕНЯ</p>
+        <p id="proverb" class="text-lg font-medium leading-relaxed text-slate-100">…</p>
+      </article>
+      <article class="bg-card border border-line rounded-2xl p-6">
+        <p class="text-xs font-black tracking-widest text-yellow-300 mb-2">ЗНАЕШ ЛИ, ЧЕ…</p>
+        <p id="didYouKnow" class="text-lg font-medium leading-relaxed text-slate-200">…</p>
+      </article>
+    </section>
+
+    <section>
+      <div class="flex items-end justify-between gap-3 mb-4">
+        <h2 class="text-2xl font-black">Вицове на деня</h2>
+        <a href="jokes.html" class="text-sm font-semibold text-indigo-300 hover:text-accent">Целият архив →</a>
+      </div>
+      <div id="jokes" class="grid gap-4 md:grid-cols-2"></div>
+    </section>
+
+    <section id="dailyHoroscope" aria-labelledby="horoscopeTitle">
+      <div class="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-black tracking-widest text-violet-300">12 ЗОДИИ · НОВА ПРОГНОЗА ВСЕКИ ДЕН</p>
+          <h2 id="horoscopeTitle" class="mt-1 text-2xl font-black">Хороскоп за деня</h2>
+        </div>
+        <p id="horoscopeDate" class="text-sm text-slate-400"></p>
+      </div>
+      <div id="horoscopeGrid" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"></div>
+      <p class="mt-4 text-xs leading-relaxed text-slate-500">Хороскопът е автоматично генерирано развлекателно съдържание, а не научна или професионална прогноза.</p>
+    </section>
+
+    <section id="namedayBox" class="bg-gradient-to-br from-indigo-950 to-slate-900 border border-indigo-800/60 rounded-2xl p-6 md:p-8"></section>
+  </main>
+
+  <footer class="border-t border-line bg-slate-950 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-3 items-center justify-between text-sm text-slate-500">
+      <p>© 2026 usmivka</p>
+      <div class="flex gap-4">
+        <a class="hover:text-accent" href="jokes.html">Вицове</a>
+        <a class="hover:text-accent" href="greetings.html">Пожелания</a>
+        <a class="hover:text-accent" href="games.html">Игри</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toasts" class="fixed bottom-4 right-4 z-[80] space-y-2"></div>
+
+  <script>
+    const FALLBACK = {
+      date: "",
+      proverb: "Капка по капка – вир става.",
+      did_you_know: "Петковден е сред най-масовите есенни именни дни в България.",
+      quote: "Доброто настроение се избира всяка сутрин.",
+      jokes: [
+        { setup: "Клиентът пита програмиста: „Сайтът готов ли е?“", punchline: "„Да, остава само да го направим да работи.“" },
+        { setup: "Защо компютърът си носи чадър?", punchline: "Защото прогнозата е за облачно съхранение." }
+      ],
+      name_day: { has_name_day: false, names: "", wishes: [] }
+    };
+
+    const ZODIAC_FALLBACK = [
+      ["Овен", "♈", "21 март – 19 април"], ["Телец", "♉", "20 април – 20 май"],
+      ["Близнаци", "♊", "21 май – 20 юни"], ["Рак", "♋", "21 юни – 22 юли"],
+      ["Лъв", "♌", "23 юли – 22 август"], ["Дева", "♍", "23 август – 22 септември"],
+      ["Везни", "♎", "23 септември – 22 октомври"], ["Скорпион", "♏", "23 октомври – 21 ноември"],
+      ["Стрелец", "♐", "22 ноември – 21 декември"], ["Козирог", "♑", "22 декември – 19 януари"],
+      ["Водолей", "♒", "20 януари – 18 февруари"], ["Риби", "♓", "19 февруари – 20 март"]
+    ];
+
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+
+    function toast(msg) {
+      const box = document.createElement("div");
+      box.className = "toast bg-emerald-500 text-white px-4 py-3 rounded-xl font-semibold shadow-lg";
+      box.textContent = msg;
+      document.getElementById("toasts").appendChild(box);
+      setTimeout(() => box.remove(), 3000);
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => toast("Копирано!")).catch(() => {
+        const ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        document.execCommand("copy"); ta.remove(); toast("Копирано!");
+      });
+    }
+
+    function renderJokes(jokes) {
+      const root = document.getElementById("jokes");
+      root.innerHTML = jokes.map((j, i) => `
+        <article class="bg-card border border-line rounded-2xl p-5 flex flex-col">
+          <p class="text-xs font-black tracking-widest text-slate-500 mb-3">ВИЦ ${i + 1}</p>
+          <p class="text-slate-100 font-medium leading-relaxed flex-1">${escapeHtml(j.setup)}</p>
+          <button data-reveal="${i}" class="mt-4 w-full py-2.5 rounded-xl bg-brand hover:bg-indigo-500 font-bold text-sm">Разкрий края</button>
+          <p id="punch-${i}" class="hidden mt-4 text-accent font-semibold leading-relaxed">${escapeHtml(j.punchline)}</p>
+        </article>
+      `).join("");
+      root.querySelectorAll("[data-reveal]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const i = btn.getAttribute("data-reveal");
+          document.getElementById("punch-" + i).classList.remove("hidden");
+          btn.classList.add("hidden");
+        });
+      });
+    }
+
+    function renderHoroscopes(horoscopes, date) {
+      const root = document.getElementById("horoscopeGrid");
+      const safeHoroscopes = Array.isArray(horoscopes) && horoscopes.length === 12
+        ? horoscopes
+        : ZODIAC_FALLBACK.map(([sign, symbol, dates]) => ({
+          sign, symbol, dates,
+          forecast: "Днес ще ти помогнат спокойният тон и ясният план. Остави място и за приятна изненада.",
+          love: "Изслушай близък човек без да бързаш с отговорите.",
+          work: "Подреди задачите си и довърши една важна стъпка.",
+          lucky_color: "Синьо",
+          lucky_number: 7
+        }));
+      document.getElementById("horoscopeDate").textContent = `Прогноза за ${date}`;
+      root.innerHTML = safeHoroscopes.map(item => `
+        <article class="relative overflow-hidden rounded-2xl border border-violet-900/60 bg-gradient-to-br from-slate-900 to-indigo-950/70 p-5">
+          <div class="absolute right-4 top-2 text-5xl text-violet-300/20" aria-hidden="true">${escapeHtml(item.symbol || "✦")}</div>
+          <div class="relative">
+            <p class="text-xs font-bold tracking-wide text-violet-300">${escapeHtml(item.dates || "")}</p>
+            <h3 class="mt-1 text-xl font-black">${escapeHtml(item.sign || "Зодия")}</h3>
+            <p class="mt-3 min-h-16 leading-relaxed text-slate-200">${escapeHtml(item.forecast || "")}</p>
+            <div class="mt-4 space-y-2 border-t border-white/10 pt-3 text-sm">
+              <p><span class="font-bold text-pink-300">Любов:</span> <span class="text-slate-300">${escapeHtml(item.love || "")}</span></p>
+              <p><span class="font-bold text-sky-300">Работа:</span> <span class="text-slate-300">${escapeHtml(item.work || "")}</span></p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs font-bold">
+              <span class="rounded-full bg-violet-500/15 px-3 py-1.5 text-violet-200">Цвят: ${escapeHtml(item.lucky_color || "")}</span>
+              <span class="rounded-full bg-yellow-400/10 px-3 py-1.5 text-yellow-200">Число: ${escapeHtml(item.lucky_number ?? "")}</span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderNameDay(data) {
+      const box = document.getElementById("namedayBox");
+      if (data.name_day && data.name_day.has_name_day) {
+        const wishes = (data.name_day.wishes || []).map((w, i) => `
+          <div class="bg-ink/50 border border-indigo-900 rounded-xl p-4">
+            <p id="wish-${i}" class="leading-relaxed mb-3">${escapeHtml(w)}</p>
+            <div class="flex gap-2">
+              <button data-copy="${i}" class="flex-1 py-2 rounded-lg bg-slate-800 font-bold text-sm">Копирай</button>
+              <a class="w-11 flex items-center justify-center rounded-lg bg-[#7360f2]" href="viber://forward?text=${encodeURIComponent(w)}" aria-label="Viber"><i class="fa-brands fa-viber"></i></a>
+            </div>
+          </div>
+        `).join("");
+        box.innerHTML = `
+          <p class="text-xs font-black tracking-widest text-yellow-300 mb-2">ИМЕН ДЕН ДНЕС</p>
+          <h3 class="text-2xl font-black mb-4">${escapeHtml(data.name_day.names)}</h3>
+          <div class="grid md:grid-cols-2 gap-4">${wishes}</div>`;
+        box.querySelectorAll("[data-copy]").forEach(btn => {
+          btn.addEventListener("click", () => copyText(document.getElementById("wish-" + btn.dataset.copy).innerText));
+        });
+      } else {
+        box.innerHTML = `
+          <p class="text-xs font-black tracking-widest text-yellow-300 mb-2">ПОЗИТИВНА МИСЪЛ ЗА ДЕНЯ</p>
+          <p class="text-2xl font-bold leading-snug">${data.quote || ""}</p>
+          <p class="mt-3 text-slate-400">Днес няма голям имен ден в календара — вземи тази мисъл със себе си.</p>`;
+      }
+    }
+
+    async function boot() {
+      let data = FALLBACK;
+      try {
+        const res = await fetch("data.json", { cache: "no-store" });
+        if (res.ok) data = await res.json();
+      } catch (e) {}
+      const today = new Intl.DateTimeFormat("bg-BG", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Sofia" }).format(new Date());
+      document.getElementById("dateLabel").textContent = today;
+      renderHoroscopes(data.horoscopes, today);
+      document.getElementById("proverb").textContent = data.proverb || FALLBACK.proverb;
+      document.getElementById("didYouKnow").textContent = data.did_you_know || FALLBACK.did_you_know;
+      renderJokes(Array.isArray(data.jokes) && data.jokes.length ? data.jokes : FALLBACK.jokes);
+      renderNameDay(data);
+    }
+    boot();
+  </script>
+</body>
+</html>

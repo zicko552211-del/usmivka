@@ -1,0 +1,19 @@
+{
+  "name": "usmivka",
+  "short_name": "usmivka",
+  "description": "Български вицове, пожелания, дневен хороскоп и безплатни браузърни игри.",
+  "lang": "bg-BG",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
