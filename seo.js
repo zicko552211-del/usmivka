@@ -155,11 +155,27 @@
       setCount("updatedWishCount", wishCount);
       const summary = document.getElementById("contentUpdateSummary");
       if (summary) {
-        summary.textContent = `Обновени са ${horoscopeCount} дневни хороскопа, ${jokeCount} вица и ${wishCount} пожелания. Съдържанието се обновява автоматично всеки ден.`;
+        summary.textContent = `Обновени са ${horoscopeCount} дневни хороскопа, ${jokeCount} вица и ${wishCount} пожелания. Датата на последното обновяване се сменя при публикуване; часовникът показва текущия час на живо.`;
       }
     } catch (error) {
       targets.forEach(target => { target.textContent = "Дневното съдържание се обновява автоматично."; });
     }
+  }
+
+  function startLocalClock() {
+    const clock = document.getElementById("currentSiteClock");
+    if (!clock) return;
+    const update = () => {
+      clock.textContent = new Intl.DateTimeFormat("bg-BG", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hourCycle: "h23",
+        timeZone: "Europe/Sofia"
+      }).format(new Date());
+    };
+    update();
+    window.setInterval(update, 1000);
   }
 
   const pathname = window.location.pathname;
@@ -197,4 +213,5 @@
   addMeta("property", "og:image:alt", "usmivka — български вицове, пожелания, хороскоп и игри");
   structuredData(pageName, info, canonical);
   updateContentTimestamp();
+  startLocalClock();
 })();
