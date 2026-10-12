@@ -138,11 +138,25 @@
         ? String(timestamp)
         : new Intl.DateTimeFormat("bg-BG", {
           day: "numeric", month: "long", year: "numeric",
-          ...(dateOnly ? {} : { hour: "2-digit", minute: "2-digit" }),
+          ...(dateOnly ? {} : { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
           timeZone: "Europe/Sofia"
         }).format(parsed);
       const timeSuffix = dateOnly ? "" : " ч.";
       targets.forEach(target => { target.textContent = `Последна актуализация: ${label}${timeSuffix}`; });
+      const horoscopeCount = Array.isArray(data.horoscopes) ? data.horoscopes.length : 0;
+      const jokeCount = Array.isArray(data.jokes) ? data.jokes.length : 0;
+      const wishCount = Array.isArray(data.daily_wishes) ? data.daily_wishes.length : 0;
+      const setCount = (id, count) => {
+        const element = document.getElementById(id);
+        if (element) element.textContent = String(count);
+      };
+      setCount("updatedHoroscopeCount", horoscopeCount);
+      setCount("updatedJokeCount", jokeCount);
+      setCount("updatedWishCount", wishCount);
+      const summary = document.getElementById("contentUpdateSummary");
+      if (summary) {
+        summary.textContent = `Обновени са ${horoscopeCount} дневни хороскопа, ${jokeCount} вица и ${wishCount} пожелания. Съдържанието се обновява автоматично всеки ден.`;
+      }
     } catch (error) {
       targets.forEach(target => { target.textContent = "Дневното съдържание се обновява автоматично."; });
     }
