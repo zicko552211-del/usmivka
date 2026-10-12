@@ -133,6 +133,18 @@
         </div>
       </div>
     </section>
+    <section id="dailyWishSection" class="mb-10 rounded-3xl border border-amber-300/20 bg-gradient-to-br from-amber-950/30 via-slate-900 to-indigo-950/40 p-5 sm:p-7" aria-labelledby="dailyWishTitle">
+      <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-black tracking-widest text-amber-200">НОВО ВСЕКИ ДЕН</p>
+          <h2 id="dailyWishTitle" class="mt-1 text-2xl font-black">Пожелания за днес</h2>
+        </div>
+        <p id="dailyWishUpdated" data-last-updated class="text-xs text-slate-500" aria-live="polite">Последна актуализация: зареждане…</p>
+      </div>
+      <div id="dailyWishesGrid" class="grid gap-4 md:grid-cols-3" aria-live="polite">
+        <p class="text-sm text-slate-400">Днешните пожелания се зареждат…</p>
+      </div>
+    </section>
     <div class="mb-6 flex flex-col gap-3 sm:flex-row">
       <label class="flex-1">
         <span class="sr-only">Търси пожелание</span>
@@ -416,6 +428,47 @@
       wishQuery = event.target.value.trim().toLocaleLowerCase("bg");
       applyWishFilters();
     });
+
+    async function loadDailyWishes() {
+      const grid = document.getElementById("dailyWishesGrid");
+      try {
+        const response = await fetch(`data.json?updated=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error("Дневното съдържание не е налично.");
+        const data = await response.json();
+        if (!Array.isArray(data.daily_wishes) || !data.daily_wishes.length) throw new Error("Няма дневни пожелания.");
+        grid.replaceChildren();
+        data.daily_wishes.forEach((wish, index) => {
+          const card = document.createElement("article");
+          card.className = "rounded-2xl border border-white/10 bg-slate-950/55 p-5";
+          const label = document.createElement("p");
+          label.className = "mb-3 text-xs font-black tracking-widest text-amber-200";
+          label.textContent = `ПОЖЕЛАНИЕ ${index + 1}`;
+          const text = document.createElement("p");
+          text.id = `daily-wish-${index + 1}`;
+          text.className = "min-h-24 leading-relaxed text-slate-200";
+          text.textContent = wish;
+          const actions = document.createElement("div");
+          actions.className = "mt-4 flex gap-2";
+          const copyButton = document.createElement("button");
+          copyButton.type = "button";
+          copyButton.className = "flex-1 rounded-xl bg-slate-800 px-3 py-2 text-sm font-bold hover:bg-slate-700";
+          copyButton.textContent = "Копирай";
+          copyButton.addEventListener("click", () => copyWish(text.id));
+          const shareButton = document.createElement("button");
+          shareButton.type = "button";
+          shareButton.className = "rounded-xl bg-[#7360f2] px-3 py-2 text-sm font-bold hover:bg-[#5b4adf]";
+          shareButton.textContent = "Viber";
+          shareButton.setAttribute("aria-label", "Сподели пожеланието във Viber");
+          shareButton.addEventListener("click", () => shareViber(text.id));
+          actions.append(copyButton, shareButton);
+          card.append(label, text, actions);
+          grid.appendChild(card);
+        });
+      } catch (error) {
+        grid.innerHTML = '<p class="text-sm text-slate-400">Дневните пожелания ще се появят след следващото автоматично обновяване.</p>';
+      }
+    }
+    loadDailyWishes();
 
     const occasionContent = {
       birthday: { greeting: "Честит рожден ден", detail: ["Днес е чудесен повод да отпразнуваме човека, който си, и всичко хубаво, което носиш на хората около себе си.", "Нека новата ти лична година започне с усмивки и продължи с поводи за гордост."] },

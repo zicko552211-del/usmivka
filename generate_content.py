@@ -7,6 +7,7 @@ import random
 import re
 from datetime import date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data.json"
@@ -97,6 +98,32 @@ WORK_FORECASTS = [
     "Направи кратка пауза, преди да вземеш решение под напрежение.",
 ]
 LUCKY_COLORS = ["Синьо", "Зелено", "Златисто", "Лилаво", "Тюркоазено", "Корал", "Бяло", "Оранжево"]
+DAILY_WISHES = [
+    "Нека днешният ден ти донесе една добра новина, един искрен разговор и поне една причина да се усмихнеш.",
+    "Пожелавам ти смелост за важните решения, спокойствие за малките неща и време за хората, които обичаш.",
+    "Нека добрината, която даваш, се върне при теб по неочакван и красив начин.",
+    "Днес си позволи да се гордееш с пътя, който вече си извървял, и да мечтаеш за следващата крачка.",
+    "Пожелавам ти лекота в задачите, топлина у дома и приятна изненада в края на деня.",
+    "Нека срещнеш точните хора, чуеш навреме хубавите думи и намериш сили за всичко важно.",
+    "Днешният ден да ти донесе повече поводи за благодарност, отколкото причини за тревога.",
+    "Пожелавам ти здраве, ясни мисли и достатъчно свободно време за нещата, които те зареждат.",
+    "Нека всяка малка победа днес ти напомня колко много можеш.",
+    "Пожелавам ти търпение за трудното, чувство за хумор за неочакваното и радост от постигнатото.",
+    "Нека денят ти започне с надежда и завърши с усещането, че си направил нещо хубаво.",
+    "Пожелавам ти уютен дом, верни приятели и мечта, която все по-смело се приближава.",
+    "Днес избери добрата дума — понякога тя е най-хубавият подарък.",
+    "Нека късметът те намери подготвен, а вдъхновението — точно когато ти трябва.",
+    "Пожелавам ти баланс между важните ангажименти и малките радости, които правят живота красив.",
+    "Нека до теб има хора, с които можеш да споделиш и успехите, и плановете си.",
+    "Днес направи нещо мило за себе си — заслужаваш същата грижа, която даваш на другите.",
+    "Пожелавам ти повече смях, по-малко бързане и хубави спомени от съвсем обикновен ден.",
+    "Нека новите възможности те намират, а увереността ти помага да ги разпознаеш.",
+    "Пожелавам ти ден, в който нещата се подреждат, а сърцето ти остава спокойно.",
+    "Нека хубавото, което очакваш, започне с една малка крачка още днес.",
+    "Пожелавам ти топла среща, добра почивка и нова причина да вярваш в плановете си.",
+    "Днес нека имаш време за усмивка, сили за мечтите и близък човек, с когото да ги споделиш.",
+    "Нека денят ти напомни, че най-хубавите неща често започват с простото „опитай“.",
+]
 
 
 def read_json(path: Path, fallback):
@@ -126,8 +153,11 @@ def build_horoscopes(rng: random.Random) -> list[dict]:
     ]
 
 
-def build_daily_content(today: date) -> dict:
+def build_daily_content(today: date, generated_at: datetime | None = None) -> dict:
     rng = random.Random(today.toordinal())
+    generated_at = generated_at or datetime.now(ZoneInfo("Europe/Sofia"))
+    if generated_at.tzinfo is None:
+        generated_at = generated_at.replace(tzinfo=ZoneInfo("Europe/Sofia"))
     name_day = NAME_DAYS.get((today.month, today.day))
     if name_day:
         name, names = name_day
@@ -140,18 +170,21 @@ def build_daily_content(today: date) -> dict:
         name_day_data = {"has_name_day": False, "names": "", "wishes": []}
     return {
         "date": f"{today.day} {MONTHS[today.month - 1].capitalize()} {today.year}",
+        "last_updated": generated_at.astimezone(ZoneInfo("Europe/Sofia")).isoformat(timespec="seconds"),
         "proverb": rng.choice(PROVERBS),
         "did_you_know": rng.choice(FACTS),
         "quote": rng.choice(QUOTES),
         "jokes": rng.sample(JOKES, 5),
         "name_day": name_day_data,
         "horoscopes": build_horoscopes(rng),
+        "daily_wishes": rng.sample(DAILY_WISHES, 3),
     }
 
 
 def main() -> int:
-    today = datetime.now().astimezone().date()
-    payload = build_daily_content(today)
+    generated_at = datetime.now(ZoneInfo("Europe/Sofia"))
+    today = generated_at.date()
+    payload = build_daily_content(today, generated_at)
     archive = read_json(ARCHIVE_FILE, [])
     if not isinstance(archive, list):
         archive = []
@@ -165,7 +198,7 @@ def main() -> int:
         archive.extend({**joke, "date": today.isoformat()} for joke in payload["jokes"])
     write_json(DATA_FILE, payload)
     write_json(ARCHIVE_FILE, archive)
-    print(f"Updated {DATA_FILE.name} and {ARCHIVE_FILE.name} for {payload['date']} ({len(archive)} archived jokes)")
+    print(f"Updated {DATA_FILE.name} and {ARCHIVE_FILE.name} for {payload['date']} at {payload['last_updated']} ({len(archive)} archived jokes)")
     return 0
 
 

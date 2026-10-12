@@ -111,6 +111,43 @@
     script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
   }
 
+  async function updateContentTimestamp() {
+    let targets = [...document.querySelectorAll("[data-last-updated]")];
+    if (!targets.length) {
+      const footer = document.querySelector("footer > div");
+      if (footer) {
+        const stamp = document.createElement("p");
+        stamp.dataset.lastUpdated = "";
+        stamp.className = "text-xs text-slate-500";
+        stamp.setAttribute("aria-live", "polite");
+        footer.appendChild(stamp);
+        targets = [stamp];
+      }
+    }
+    if (!targets.length) return;
+
+    try {
+      const response = await fetch(`data.json?updated=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) throw new Error("Daily content is not available");
+      const data = await response.json();
+      const timestamp = data.last_updated || data.date;
+      if (!timestamp) throw new Error("Update timestamp is missing");
+      const parsed = new Date(timestamp);
+      const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(String(timestamp));
+      const label = Number.isNaN(parsed.getTime())
+        ? String(timestamp)
+        : new Intl.DateTimeFormat("bg-BG", {
+          day: "numeric", month: "long", year: "numeric",
+          ...(dateOnly ? {} : { hour: "2-digit", minute: "2-digit" }),
+          timeZone: "Europe/Sofia"
+        }).format(parsed);
+      const timeSuffix = dateOnly ? "" : " ч.";
+      targets.forEach(target => { target.textContent = `Последна актуализация: ${label}${timeSuffix}`; });
+    } catch (error) {
+      targets.forEach(target => { target.textContent = "Дневното съдържание се обновява автоматично."; });
+    }
+  }
+
   const pathname = window.location.pathname;
   const pageName = pathname.endsWith("/") ? "index.html" : pathname.split("/").pop();
   const info = PAGE_INFO[pageName];
@@ -145,4 +182,5 @@
   }
   addMeta("property", "og:image:alt", "usmivka — български вицове, пожелания, хороскоп и игри");
   structuredData(pageName, info, canonical);
+  updateContentTimestamp();
 })();
